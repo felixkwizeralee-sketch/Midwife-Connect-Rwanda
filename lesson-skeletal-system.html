@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 4: Skeletal System | Midwife Connect Rwanda</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        .lesson-hero {
+            background: linear-gradient(135deg, #eafaf7, #f8fffd);
+            padding: 60px 0;
+        }
+
+        .lesson-breadcrumb {
+            color: #008b7a;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lesson-hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.1;
+            max-width: 850px;
+        }
+
+        .lesson-hero h1 span {
+            color: #008b7a;
+        }
+
+        .lesson-hero p {
+            max-width: 750px;
+            margin-top: 20px;
+            color: #5e716e;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .lesson-container {
+            max-width: 950px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .lesson-content h2 {
+            font-size: 32px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+        }
+
+        .lesson-content h3 {
+            font-size: 22px;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .lesson-content p {
+            color: #526663;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .objectives {
+            background: #f4faf9;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 40px;
+        }
+
+        .objectives ul {
+            padding-left: 25px;
+            margin-top: 15px;
+        }
+
+        .objectives li {
+            margin-bottom: 10px;
+            color: #526663;
+        }
+
+        .definition-box {
+            background: #f4faf9;
+            border-left: 5px solid #008b7a;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .definition-box strong {
+            color: #008b7a;
+        }
+
+        .bone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .bone-card {
+            padding: 25px;
+            border: 1px solid #e0ebe9;
+            border-radius: 16px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .bone-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 70, 65, 0.08);
+        }
+
+        .bone-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .bone-card h3 {
+            margin-top: 0;
+        }
+
+        .bone-card p {
+            font-size: 15px;
+        }
+
+        .pelvis-box {
+            background: #fff9e8;
+            border-left: 5px solid #e2aa00;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pelvis-box strong {
+            color: #8b6900;
+        }
+
+        .clinical-box {
+            background: #edf7ff;
+            border-left: 5px solid #3185c7;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .clinical-box strong {
+            color: #17649a;
+        }
+
+        .memory-box {
+            background: #f4faf9;
+            padding: 28px;
+            border-radius: 18px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .memory-box strong {
+            color: #008b7a;
+            font-size: 20px;
+        }
+
+        .review {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8fbfb;
+            border: 1px solid #e0ebe9;
+            border-radius: 18px;
+        }
+
+        .question {
+            margin: 22px 0;
+        }
+
+        .answer {
+            margin-top: 7px;
+            padding-left: 15px;
+            border-left: 3px solid #cde5e1;
+            color: #657572;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e1ecea;
+        }
+
+        @media (max-width: 650px) {
+
+            .bone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lesson-navigation {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">🤰</span>
+
+            <span>
+                <strong>Midwife Connect</strong>
+                <small>Rwanda</small>
+            </span>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+            <a href="students.html">Students</a>
+            <a href="midwives.html">Midwives</a>
+            <a href="pregnancy.html">Pregnancy</a>
+            <a href="youth.html">Youth</a>
+            <a href="quiz.html">Quiz</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <select class="language-select">
+                <option>English</option>
+                <option>Kinyarwanda</option>
+                <option>Français</option>
+                <option>Kiswahili</option>
+            </select>
+
+            <a href="#" class="login-btn">Login</a>
+
+            <button class="menu-btn">☰</button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<section class="lesson-hero">
+
+    <div class="container">
+
+        <div class="lesson-breadcrumb">
+            Anatomy & Physiology → Lesson 4
+        </div>
+
+        <h1>
+            The <span>Skeletal System</span>
+        </h1>
+
+        <p>
+            Learn the major bones of the human body, their functions,
+            and why the pelvis is especially important in midwifery
+            and childbirth.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="lesson-container">
+
+    <article class="lesson-content">
+
+
+        <!-- OBJECTIVES -->
+
+        <div class="objectives">
+
+            <h2>🎯 Learning Objectives</h2>
+
+            <p>
+                By the end of this lesson, you should be able to:
+            </p>
+
+            <ul>
+
+                <li>
+                    Define the skeletal system.
+                </li>
+
+                <li>
+                    Describe major functions of bones.
+                </li>
+
+                <li>
+                    Identify major divisions of the skeleton.
+                </li>
+
+                <li>
+                    Identify important bones of the human body.
+                </li>
+
+                <li>
+                    Describe the female pelvis.
+                </li>
+
+                <li>
+                    Explain the importance of the pelvis in childbirth.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- INTRODUCTION -->
+
+        <h2>
+            1. What is the Skeletal System?
+        </h2>
+
+        <p>
+            The <strong>skeletal system</strong> is the body's
+            framework. It consists mainly of bones and cartilage,
+            together with joints and supporting connective tissues.
+        </p>
+
+
+        <div class="definition-box">
+
+            <strong>
+                Simple definition:
+            </strong>
+
+            <p>
+                The skeletal system provides the framework that
+                supports and protects the body.
+            </p>
+
+        </div>
+
+
+
+        <!-- FUNCTIONS -->
+
+        <h2>
+            2. Functions of the Skeletal System
+        </h2>
+
+        <div class="bone-grid">
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🏗️</div>
+
+                <h3>
+                    Support
+                </h3>
+
+                <p>
+                    Bones provide a framework that supports
+                    the body and maintains its shape.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🛡️</div>
+
+                <h3>
+                    Protection
+                </h3>
+
+                <p>
+                    Bones protect important organs such as
+                    the brain, heart and lungs.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🏃</div>
+
+                <h3>
+                    Movement
+                </h3>
+
+                <p>
+                    Bones work with muscles and joints to
+                    allow movement.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🩸</div>
+
+                <h3>
+                    Blood Cell Formation
+                </h3>
+
+                <p>
+                    Bone marrow produces important blood cells
+                    through hematopoiesis.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🧂</div>
+
+                <h3>
+                    Mineral Storage
+                </h3>
+
+                <p>
+                    Bones store minerals, especially calcium
+                    and phosphorus.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">⚖️</div>
+
+                <h3>
+                    Body Balance
+                </h3>
+
+                <p>
+                    Bones contribute to mineral balance and
+                    other physiological functions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DIVISIONS -->
+
+        <h2>
+            3. Major Divisions of the Skeleton
+        </h2>
+
+        <p>
+            The skeleton can be divided into two major parts:
+        </p>
+
+
+        <div class="bone-grid">
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🧍</div>
+
+                <h3>
+                    Axial Skeleton
+                </h3>
+
+                <p>
+                    Includes the skull, vertebral column,
+                    ribs and sternum. It forms the central
+                    axis of the body.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦵</div>
+
+                <h3>
+                    Appendicular Skeleton
+                </h3>
+
+                <p>
+                    Includes the bones of the upper and lower
+                    limbs and the shoulder and pelvic girdles.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MAJOR BONES -->
+
+        <h2>
+            4. Major Bones to Know
+        </h2>
+
+        <div class="bone-grid">
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Skull
+                </h3>
+
+                <p>
+                    Protects the brain and forms the structure
+                    of the head.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Vertebral Column
+                </h3>
+
+                <p>
+                    Supports the body and protects the spinal cord.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Ribs
+                </h3>
+
+                <p>
+                    Form the thoracic cage and help protect
+                    the heart and lungs.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Sternum
+                </h3>
+
+                <p>
+                    The breastbone located at the front of
+                    the thoracic cage.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Femur
+                </h3>
+
+                <p>
+                    The longest and strongest bone of the
+                    human body, located in the thigh.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <h3>
+                    Humerus
+                </h3>
+
+                <p>
+                    The major bone of the upper arm.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PELVIS -->
+
+        <h2>
+            5. The Female Pelvis
+        </h2>
+
+        <p>
+            The pelvis is one of the most important parts of
+            the skeletal system for midwives because it forms
+            the bony passage through which the fetus passes
+            during vaginal birth.
+        </p>
+
+
+        <div class="pelvis-box">
+
+            <strong>
+                🤰 Why is the pelvis important in childbirth?
+            </strong>
+
+            <p>
+                The size and shape of the maternal pelvis can
+                influence the passage of the fetal head and body
+                during labour and birth.
+            </p>
+
+        </div>
+
+
+
+        <h3>
+            Major bones of the pelvis
+        </h3>
+
+        <p>
+            The bony pelvis includes the two hip bones,
+            the sacrum and the coccyx.
+        </p>
+
+
+        <div class="bone-grid">
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦴</div>
+
+                <h3>
+                    Ilium
+                </h3>
+
+                <p>
+                    The broad, upper part of each hip bone.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦴</div>
+
+                <h3>
+                    Ischium
+                </h3>
+
+                <p>
+                    The lower and posterior part of the hip bone.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦴</div>
+
+                <h3>
+                    Pubis
+                </h3>
+
+                <p>
+                    The anterior portion of the hip bone.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦴</div>
+
+                <h3>
+                    Sacrum
+                </h3>
+
+                <p>
+                    A triangular bone forming the posterior
+                    part of the pelvis.
+                </p>
+
+            </div>
+
+
+            <div class="bone-card">
+
+                <div class="bone-icon">🦴</div>
+
+                <h3>
+                    Coccyx
+                </h3>
+
+                <p>
+                    The small terminal part of the vertebral
+                    column below the sacrum.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OBSTETRIC PELVIS -->
+
+        <h2>
+            6. The Pelvis and Labour
+        </h2>
+
+        <p>
+            During labour, the fetal presenting part must pass
+            through the maternal pelvis. Midwives therefore need
+            to understand pelvic anatomy when assessing labour.
+        </p>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🩺 Clinical connection
+            </strong>
+
+            <p>
+                Knowledge of the maternal pelvis helps the midwife
+                understand fetal descent, engagement, station,
+                position and the mechanism of labour.
+            </p>
+
+        </div>
+
+
+        <p>
+            Important pelvic regions discussed in obstetrics include
+            the pelvic inlet, pelvic cavity and pelvic outlet.
+        </p>
+
+
+
+        <!-- BONE REMODELING -->
+
+        <h2>
+            7. Bone Marrow
+        </h2>
+
+        <p>
+            Some bones contain bone marrow. Red bone marrow is
+            responsible for producing blood cells.
+        </p>
+
+        <div class="definition-box">
+
+            <strong>
+                Remember:
+            </strong>
+
+            <p>
+                Red bone marrow → production of blood cells.
+            </p>
+
+        </div>
+
+
+
+        <!-- SUMMARY -->
+
+        <h2>
+            8. Summary
+        </h2>
+
+        <p>
+            The skeletal system provides support, protection,
+            movement and other important functions. For midwives,
+            understanding the maternal pelvis is particularly
+            important because it forms the bony birth passage.
+        </p>
+
+
+        <div class="memory-box">
+
+            <strong>
+                🧠 Exam Memory
+            </strong>
+
+            <p>
+                Skeleton = Support + Protection + Movement +
+                Blood formation + Mineral storage
+            </p>
+
+        </div>
+
+
+
+        <!-- REVIEW -->
+
+        <div class="review">
+
+            <h2>
+                🧠 Quick Review
+            </h2>
+
+
+            <div class="question">
+
+                <strong>
+                    1. What is the main function of the skeleton?
+                </strong>
+
+                <div class="answer">
+                    It provides structural support and protection,
+                    while also contributing to movement and other
+                    physiological functions.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    2. Name the two major divisions of the skeleton.
+                </strong>
+
+                <div class="answer">
+                    Axial skeleton and appendicular skeleton.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    3. Which bone is the longest in the human body?
+                </strong>
+
+                <div class="answer">
+                    The femur.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    4. Why is the pelvis important to midwives?
+                </strong>
+
+                <div class="answer">
+                    It forms the bony passage through which the fetus
+                    passes during vaginal birth.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    5. Name three bones that form part of the pelvis.
+                </strong>
+
+                <div class="answer">
+                    Ilium, ischium and pubis. The sacrum and coccyx
+                    also form part of the bony pelvis.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <div class="lesson-navigation">
+
+            <a href="lesson-anatomical-position.html"
+                class="secondary-btn">
+
+                ← Previous Lesson
+
+            </a>
+
+
+            <a href="lesson-muscular-system.html" class="primary-btn">
+    Next Lesson →
+</a>
+
+        </div>
+
+
+    </article>
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                🤰 Midwife Connect Rwanda
+            </h3>
+
+            <p>
+                Learn • Care • Connect
+            </p>
+
+            <p>
+                Reproductive health and midwifery education
+                for Rwanda and beyond.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <a href="../index.html">Home</a>
+            <a href="students.html">Students</a>
+            <a href="pregnancy.html">Pregnancy</a>
+            <a href="quiz.html">Quiz</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Resources</h4>
+
+            <a href="midwives.html">Midwives</a>
+            <a href="youth.html">Youth</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Midwife Connect Rwanda.
+            Founded by Kwizera Felix.
+        </p>
+
+        <p>
+            Educational information only — not a replacement
+            for professional medical care.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
