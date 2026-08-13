@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Lesson 8: Respiratory System | Midwife Connect Rwanda
+    </title>
+
+    <link rel="stylesheet" href="../css/style.css">
+<script src="../js/progress.js"></script>
+
+    <style>
+
+        .lesson-hero {
+            background: linear-gradient(135deg, #eafaf7, #f8fffd);
+            padding: 60px 0;
+        }
+
+        .lesson-breadcrumb {
+            color: #008b7a;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lesson-hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.1;
+            max-width: 850px;
+        }
+
+        .lesson-hero h1 span {
+            color: #008b7a;
+        }
+
+        .lesson-hero p {
+            max-width: 750px;
+            margin-top: 20px;
+            color: #5e716e;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .lesson-container {
+            max-width: 950px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .lesson-content h2 {
+            font-size: 32px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+        }
+
+        .lesson-content h3 {
+            font-size: 22px;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .lesson-content p {
+            color: #526663;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .objectives {
+            background: #f4faf9;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 40px;
+        }
+
+        .objectives ul {
+            padding-left: 25px;
+            margin-top: 15px;
+        }
+
+        .objectives li {
+            margin-bottom: 10px;
+            color: #526663;
+        }
+
+        .definition-box {
+            background: #f4faf9;
+            border-left: 5px solid #008b7a;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .definition-box strong {
+            color: #008b7a;
+        }
+
+        .lung-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .lung-card {
+            padding: 25px;
+            border: 1px solid #e0ebe9;
+            border-radius: 16px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .lung-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 70, 65, 0.08);
+        }
+
+        .lung-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .lung-card h3 {
+            margin-top: 0;
+        }
+
+        .lung-card p {
+            font-size: 15px;
+        }
+
+        .clinical-box {
+            background: #fff9e8;
+            border-left: 5px solid #e2aa00;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .clinical-box strong {
+            color: #8b6900;
+        }
+
+        .info-box {
+            background: #edf7ff;
+            border-left: 5px solid #3185c7;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .info-box strong {
+            color: #17649a;
+        }
+
+        .danger-box {
+            background: #fff1f1;
+            border-left: 5px solid #d84b4b;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .danger-box strong {
+            color: #b52d2d;
+        }
+
+        .flow-box {
+            background: #f8fbfb;
+            border: 1px solid #dce9e7;
+            border-radius: 18px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 18px;
+            line-height: 2.2;
+        }
+
+        .memory-box {
+            background: #f4faf9;
+            padding: 28px;
+            border-radius: 18px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .memory-box strong {
+            color: #008b7a;
+            font-size: 20px;
+        }
+
+        .review {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8fbfb;
+            border: 1px solid #e0ebe9;
+            border-radius: 18px;
+        }
+
+        .question {
+            margin: 22px 0;
+        }
+
+        .answer {
+            margin-top: 7px;
+            padding-left: 15px;
+            border-left: 3px solid #cde5e1;
+            color: #657572;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e1ecea;
+        }
+
+        @media (max-width: 700px) {
+
+            .lung-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .lesson-navigation {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">🤰</span>
+
+            <span>
+                <strong>Midwife Connect</strong>
+                <small>Rwanda</small>
+            </span>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+            <a href="student.html">Students</a>
+            <a href="midwife.html">Midwives</a>
+            <a href="pregnancy.html">Pregnancy</a>
+            <a href="youth.html">Youth</a>
+            <a href="quiz.html">Quiz</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <select class="language-select">
+
+                <option>English</option>
+                <option>Kinyarwanda</option>
+                <option>Français</option>
+                <option>Kiswahili</option>
+
+            </select>
+
+            <a href="#" class="login-btn">
+                Login
+            </a>
+
+            <button class="menu-btn">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<section class="lesson-hero">
+
+    <div class="container">
+
+        <div class="lesson-breadcrumb">
+            Anatomy & Physiology → Lesson 8
+        </div>
+
+        <h1>
+            The <span>Respiratory System</span>
+        </h1>
+
+        <p>
+            Learn how air enters the body, how oxygen reaches the
+            blood, how carbon dioxide is removed, and why respiration
+            is essential during pregnancy and childbirth.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="lesson-container">
+
+    <article class="lesson-content">
+
+
+        <!-- OBJECTIVES -->
+
+        <div class="objectives">
+
+            <h2>
+                🎯 Learning Objectives
+            </h2>
+
+            <p>
+                By the end of this lesson, you should be able to:
+            </p>
+
+            <ul>
+
+                <li>
+                    Define the respiratory system.
+                </li>
+
+                <li>
+                    Identify the major respiratory organs.
+                </li>
+
+                <li>
+                    Explain the pathway of air through the respiratory tract.
+                </li>
+
+                <li>
+                    Describe the role of the alveoli in gas exchange.
+                </li>
+
+                <li>
+                    Explain the difference between ventilation and gas exchange.
+                </li>
+
+                <li>
+                    Describe important respiratory changes during pregnancy.
+                </li>
+
+                <li>
+                    Explain the importance of oxygenation during labour.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- INTRODUCTION -->
+
+        <h2>
+            1. What is the Respiratory System?
+        </h2>
+
+        <p>
+            The respiratory system is responsible for bringing oxygen
+            into the body and removing carbon dioxide.
+        </p>
+
+        <p>
+            Oxygen is essential for cellular metabolism, while carbon
+            dioxide is a major waste product that must be removed.
+        </p>
+
+
+        <div class="definition-box">
+
+            <strong>
+                Simple definition:
+            </strong>
+
+            <p>
+                The respiratory system allows the body to take in
+                oxygen and eliminate carbon dioxide.
+            </p>
+
+        </div>
+
+
+
+        <!-- ORGANS -->
+
+        <h2>
+            2. Major Organs of the Respiratory System
+        </h2>
+
+
+        <div class="lung-grid">
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    👃
+                </div>
+
+                <h3>
+                    Nose and Nasal Cavity
+                </h3>
+
+                <p>
+                    Help filter, warm and humidify incoming air.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    👄
+                </div>
+
+                <h3>
+                    Pharynx
+                </h3>
+
+                <p>
+                    A passage that connects the nasal and oral
+                    cavities with the larynx.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    🗣️
+                </div>
+
+                <h3>
+                    Larynx
+                </h3>
+
+                <p>
+                    Connects the pharynx with the trachea and
+                    contains the vocal cords.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    🫁
+                </div>
+
+                <h3>
+                    Trachea
+                </h3>
+
+                <p>
+                    Conducts air toward the bronchi and lungs.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Bronchi
+                </h3>
+
+                <p>
+                    The trachea divides into right and left main
+                    bronchi that enter the lungs.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    🫧
+                </div>
+
+                <h3>
+                    Alveoli
+                </h3>
+
+                <p>
+                    Tiny air sacs where oxygen and carbon dioxide
+                    are exchanged between air and blood.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AIR PATHWAY -->
+
+        <h2>
+            3. Pathway of Air
+        </h2>
+
+
+        <div class="flow-box">
+
+            <strong>
+                Nose / Mouth
+            </strong>
+
+            ↓
+
+            <strong>
+                Pharynx
+            </strong>
+
+            ↓
+
+            <strong>
+                Larynx
+            </strong>
+
+            ↓
+
+            <strong>
+                Trachea
+            </strong>
+
+            ↓
+
+            <strong>
+                Bronchi
+            </strong>
+
+            ↓
+
+            <strong>
+                Bronchioles
+            </strong>
+
+            ↓
+
+            <strong>
+                Alveoli
+            </strong>
+
+        </div>
+
+
+
+        <!-- VENTILATION -->
+
+        <h2>
+            4. Ventilation
+        </h2>
+
+        <p>
+            Ventilation is the movement of air into and out of
+            the lungs.
+        </p>
+
+
+        <h3>
+            Inspiration
+        </h3>
+
+        <p>
+            Inspiration is breathing air into the lungs.
+            The diaphragm contracts and moves downward, helping
+            increase the volume of the thoracic cavity.
+        </p>
+
+
+        <h3>
+            Expiration
+        </h3>
+
+        <p>
+            Expiration is breathing air out of the lungs.
+            During quiet breathing, it is largely passive.
+        </p>
+
+
+        <div class="info-box">
+
+            <strong>
+                🧠 Remember
+            </strong>
+
+            <p>
+                Inspiration = air moves into the lungs.
+            </p>
+
+            <p>
+                Expiration = air moves out of the lungs.
+            </p>
+
+        </div>
+
+
+
+        <!-- DIAPHRAGM -->
+
+        <h2>
+            5. The Diaphragm
+        </h2>
+
+        <p>
+            The diaphragm is the major muscle of respiration.
+            It separates the thoracic cavity from the abdominal cavity.
+        </p>
+
+        <p>
+            When the diaphragm contracts, it moves downward and
+            helps draw air into the lungs.
+        </p>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🩺 Clinical connection
+            </strong>
+
+            <p>
+                Changes in the position and movement of the diaphragm
+                contribute to the altered respiratory experience
+                commonly seen during pregnancy.
+            </p>
+
+        </div>
+
+
+
+        <!-- GAS EXCHANGE -->
+
+        <h2>
+            6. Gas Exchange
+        </h2>
+
+        <p>
+            Gas exchange occurs mainly across the thin walls of
+            the alveoli and surrounding pulmonary capillaries.
+        </p>
+
+
+        <div class="lung-grid">
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    🫁
+                </div>
+
+                <h3>
+                    Oxygen
+                </h3>
+
+                <p>
+                    Moves from the alveolar air into the blood.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <div class="lung-icon">
+                    ♻️
+                </div>
+
+                <h3>
+                    Carbon Dioxide
+                </h3>
+
+                <p>
+                    Moves from the blood into the alveoli and
+                    is then exhaled.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OXYGEN TRANSPORT -->
+
+        <h2>
+            7. Oxygen Transport
+        </h2>
+
+        <p>
+            Most oxygen in blood is transported bound to
+            hemoglobin inside red blood cells.
+        </p>
+
+        <p>
+            Oxygenated blood is delivered through the circulation
+            to tissues where oxygen is released for cellular use.
+        </p>
+
+
+        <div class="definition-box">
+
+            <strong>
+                Key idea:
+            </strong>
+
+            <p>
+                Lungs oxygenate blood → cardiovascular system
+                transports oxygen → tissues use oxygen.
+            </p>
+
+        </div>
+
+
+
+        <!-- RESPIRATORY RATE -->
+
+        <h2>
+            8. Respiratory Rate
+        </h2>
+
+        <p>
+            Respiratory rate is the number of breaths taken
+            in one minute.
+        </p>
+
+        <p>
+            Respiratory rate is one of the vital signs assessed
+            during clinical care.
+        </p>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🩺 Midwifery connection
+            </strong>
+
+            <p>
+                Assess respiratory rate and overall breathing
+                whenever maternal condition requires clinical
+                assessment, particularly when there are signs
+                of respiratory distress or illness.
+            </p>
+
+        </div>
+
+
+
+        <!-- PREGNANCY -->
+
+        <h2>
+            9. Respiratory Changes During Pregnancy
+        </h2>
+
+        <p>
+            Pregnancy produces physiological changes in the
+            respiratory system to support increased maternal
+            metabolic needs and fetal development.
+        </p>
+
+
+        <div class="lung-grid">
+
+
+            <div class="lung-card">
+
+                <h3>
+                    Increased Oxygen Demand
+                </h3>
+
+                <p>
+                    Maternal oxygen consumption increases during
+                    pregnancy.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <h3>
+                    Diaphragm Position
+                </h3>
+
+                <p>
+                    As the uterus enlarges, the diaphragm is displaced
+                    upward.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <h3>
+                    Increased Ventilation
+                </h3>
+
+                <p>
+                    Maternal ventilation increases, particularly
+                    through an increase in tidal volume.
+                </p>
+
+            </div>
+
+
+            <div class="lung-card">
+
+                <h3>
+                    Hormonal Effects
+                </h3>
+
+                <p>
+                    Pregnancy hormones contribute to changes in
+                    respiratory physiology and breathing sensations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FETAL OXYGEN -->
+
+        <h2>
+            10. Maternal and Fetal Oxygenation
+        </h2>
+
+        <p>
+            The fetus depends on the placenta for exchange of
+            oxygen and carbon dioxide between maternal and fetal
+            circulations.
+        </p>
+
+
+        <div class="flow-box">
+
+            <strong>
+                Mother
+            </strong>
+
+            ↓
+
+            <strong>
+                Maternal Blood
+            </strong>
+
+            ↓
+
+            <strong>
+                Placenta
+            </strong>
+
+            ↓
+
+            <strong>
+                Fetal Circulation
+            </strong>
+
+            ↓
+
+            <strong>
+                Fetus
+            </strong>
+
+        </div>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🤰 Important midwifery point
+            </strong>
+
+            <p>
+                Adequate maternal oxygenation and circulation are
+                important for maintaining oxygen delivery to the
+                fetus.
+            </p>
+
+        </div>
+
+
+
+        <!-- LABOUR -->
+
+        <h2>
+            11. Respiration During Labour
+        </h2>
+
+        <p>
+            Labour increases physical and metabolic demands.
+            Breathing patterns may change as contractions become
+            stronger and more frequent.
+        </p>
+
+        <p>
+            Appropriate supportive care can help a woman remain
+            comfortable and cope with labour.
+        </p>
+
+
+        <div class="info-box">
+
+            <strong>
+                🩺 Midwifery practice
+            </strong>
+
+            <p>
+                Observe the woman's breathing, overall condition,
+                oxygenation when clinically indicated, and signs
+                of respiratory distress.
+            </p>
+
+        </div>
+
+
+
+        <!-- RESPIRATORY DISTRESS -->
+
+        <h2>
+            12. Signs of Respiratory Distress
+        </h2>
+
+        <p>
+            Respiratory distress may present with symptoms and
+            signs such as:
+        </p>
+
+        <ul>
+
+            <li>
+                Difficulty breathing
+            </li>
+
+            <li>
+                Very rapid or unusually slow breathing
+            </li>
+
+            <li>
+                Increased work of breathing
+            </li>
+
+            <li>
+                Cyanosis or abnormal skin/lip coloration
+            </li>
+
+            <li>
+                Altered level of consciousness in severe cases
+            </li>
+
+        </ul>
+
+
+        <div class="danger-box">
+
+            <strong>
+                ⚠️ Clinical warning
+            </strong>
+
+            <p>
+                Significant breathing difficulty or suspected
+                hypoxia requires prompt clinical assessment and
+                escalation according to local emergency protocols.
+            </p>
+
+        </div>
+
+
+
+        <!-- SUMMARY -->
+
+        <h2>
+            13. Summary
+        </h2>
+
+
+        <div class="memory-box">
+
+            <strong>
+                🫁 Remember
+            </strong>
+
+            <p>
+                Air enters → Airways → Alveoli
+            </p>
+
+            <p>
+                Alveoli → Oxygen enters blood
+            </p>
+
+            <p>
+                Blood → Oxygen delivered to tissues
+            </p>
+
+            <p>
+                Carbon dioxide → Blood → Alveoli → Exhaled
+            </p>
+
+            <p>
+                Pregnancy → Increased respiratory demand
+            </p>
+
+        </div>
+
+
+
+        <!-- REVIEW -->
+
+        <div class="review">
+
+            <h2>
+                🧠 Quick Review
+            </h2>
+
+
+            <div class="question">
+
+                <strong>
+                    1. What is the main function of the respiratory system?
+                </strong>
+
+                <div class="answer">
+                    To bring oxygen into the body and remove
+                    carbon dioxide.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    2. Where does most gas exchange occur?
+                </strong>
+
+                <div class="answer">
+                    At the alveoli and surrounding pulmonary
+                    capillaries.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    3. What is the main muscle of respiration?
+                </strong>
+
+                <div class="answer">
+                    The diaphragm.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    4. What is inspiration?
+                </strong>
+
+                <div class="answer">
+                    Movement of air into the lungs.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    5. What is expiration?
+                </strong>
+
+                <div class="answer">
+                    Movement of air out of the lungs.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    6. Why is maternal respiration important
+                    during pregnancy?
+                </strong>
+
+                <div class="answer">
+                    Maternal respiration supplies oxygen and removes
+                    carbon dioxide, supporting maternal metabolism
+                    and oxygen delivery to the fetus through placental
+                    exchange.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <div class="lesson-navigation">
+
+            <a href="lesson-cardiovascular-system.html"
+                class="secondary-btn">
+
+                ← Previous Lesson
+
+            </a>
+
+<a href="lesson-digestive-system.html" class="primary-btn">
+    Next Lesson →
+</a>
+
+        </div>
+
+
+    </article>
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                🤰 Midwife Connect Rwanda
+            </h3>
+
+            <p>
+                Learn • Care • Connect
+            </p>
+
+            <p>
+                Reproductive health and midwifery education
+                for Rwanda and beyond.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="../index.html">Home</a>
+
+            <a href="student.html">
+                Students
+            </a>
+
+            <a href="pregnancy.html">
+                Pregnancy
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="midwife.html">
+                Midwives
+            </a>
+
+            <a href="youth.html">
+                Youth
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Midwife Connect Rwanda.
+            Founded by Kwizera Felix.
+        </p>
+
+        <p>
+            Educational information only — not a replacement
+            for professional medical care.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<div id="mcr-complete" style="max-width:900px;margin:25px auto;padding:18px;background:#fff;border:1px solid #e2ebe8;border-radius:14px">
+<button type="button" id="completeLesson" style="padding:11px 16px;border:0;border-radius:9px;background:#8b4f82;color:#fff;font-weight:700">Mark lesson complete ✓</button>
+<span id="progressStatus" style="margin-left:12px;color:#5d6d69"></span>
+</div>
+<script>
+(function(){
+ const slug="lesson-respiratory-system";
+ const btn=document.getElementById("completeLesson"), status=document.getElementById("progressStatus");
+ function refresh(){if(MCRProgress.isComplete(slug)){btn.textContent="Lesson completed ✓";status.textContent="Saved on this device";btn.disabled=true;}}
+ btn.addEventListener("click",()=>{MCRProgress.complete(slug);refresh();});
+ refresh();
+})();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Lesson 2: Levels of Organization |
+        Midwife Connect Rwanda
+    </title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <style>
+
+        .lesson-hero {
+            background: linear-gradient(135deg, #eafaf7, #f8fffd);
+            padding: 60px 0;
+        }
+
+        .lesson-breadcrumb {
+            color: #008b7a;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lesson-hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.1;
+            max-width: 850px;
+        }
+
+        .lesson-hero h1 span {
+            color: #008b7a;
+        }
+
+        .lesson-hero p {
+            max-width: 750px;
+            margin-top: 20px;
+            color: #5e716e;
+            font-size: 18px;
+        }
+
+        .lesson-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .lesson-content h2 {
+            font-size: 32px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+        }
+
+        .lesson-content h3 {
+            font-size: 23px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .lesson-content p {
+            color: #526663;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .definition-box {
+            background: #f4faf9;
+            border-left: 5px solid #008b7a;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .definition-box strong {
+            color: #008b7a;
+        }
+
+        .level-card {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 25px;
+            margin: 18px 0;
+            border: 1px solid #e0ebe9;
+            border-radius: 16px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .level-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 70, 65, 0.08);
+        }
+
+        .level-icon {
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: #eafaf7;
+            font-size: 30px;
+        }
+
+        .level-card h3 {
+            margin: 0 0 5px;
+        }
+
+        .level-card p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .sequence {
+            text-align: center;
+            background: #f4faf9;
+            padding: 30px;
+            border-radius: 18px;
+            margin: 35px 0;
+        }
+
+        .sequence strong {
+            color: #008b7a;
+            font-size: 20px;
+        }
+
+        .example-box {
+            background: #fff9e8;
+            border-left: 5px solid #e2aa00;
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+
+        .objectives {
+            background: #f4faf9;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 40px;
+        }
+
+        .objectives ul {
+            padding-left: 25px;
+            margin-top: 15px;
+        }
+
+        .objectives li {
+            margin-bottom: 10px;
+            color: #526663;
+        }
+
+        .review {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8fbfb;
+            border: 1px solid #e0ebe9;
+            border-radius: 18px;
+        }
+
+        .question {
+            margin: 22px 0;
+        }
+
+        .answer {
+            margin-top: 7px;
+            padding-left: 15px;
+            border-left: 3px solid #cde5e1;
+            color: #657572;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e1ecea;
+        }
+
+        @media (max-width: 650px) {
+
+            .level-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .level-icon {
+                margin: auto;
+            }
+
+            .lesson-navigation {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">🤰</span>
+
+            <span>
+                <strong>Midwife Connect</strong>
+                <small>Rwanda</small>
+            </span>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+
+            <a href="student.html">Students</a>
+
+            <a href="midwife.html">Midwives</a>
+
+            <a href="pregnancy.html">Pregnancy</a>
+
+            <a href="youth.html">Youth</a>
+
+            <a href="quiz.html">Quiz</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <select class="language-select">
+
+                <option>English</option>
+                <option>Kinyarwanda</option>
+                <option>Français</option>
+                <option>Kiswahili</option>
+
+            </select>
+
+            <a href="#" class="login-btn">
+                Login
+            </a>
+
+            <button class="menu-btn">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<section class="lesson-hero">
+
+    <div class="container">
+
+        <div class="lesson-breadcrumb">
+            Anatomy & Physiology → Lesson 2
+        </div>
+
+        <h1>
+            Levels of
+            <span>Organization</span>
+        </h1>
+
+        <p>
+            Learn how the human body is organized from
+            the smallest living unit to the complete human organism.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="lesson-container">
+
+    <article class="lesson-content">
+
+
+        <div class="objectives">
+
+            <h2>
+                🎯 Learning Objectives
+            </h2>
+
+            <p>
+                By the end of this lesson, you should be able to:
+            </p>
+
+            <ul>
+
+                <li>
+                    Define the major levels of body organization.
+                </li>
+
+                <li>
+                    Explain how cells form tissues.
+                </li>
+
+                <li>
+                    Explain how tissues form organs.
+                </li>
+
+                <li>
+                    Describe how organs work together in organ systems.
+                </li>
+
+                <li>
+                    Recall the sequence from cell to organism.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <h2>
+            1. Introduction
+        </h2>
+
+        <p>
+            The human body is not one simple structure.
+            It is made of many smaller structures that work
+            together in an organized way.
+        </p>
+
+        <p>
+            These structures are arranged in levels of increasing
+            complexity.
+        </p>
+
+
+        <div class="sequence">
+
+            <strong>
+                Cell → Tissue → Organ → Organ System → Organism
+            </strong>
+
+        </div>
+
+
+
+        <h2>
+            2. Cell
+        </h2>
+
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                🔬
+            </div>
+
+            <div>
+
+                <h3>
+                    Cell
+                </h3>
+
+                <p>
+                    A cell is the basic structural and functional
+                    unit of the human body.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            The human body contains many different types of cells.
+            Examples include red blood cells, nerve cells,
+            muscle cells and epithelial cells.
+        </p>
+
+
+        <div class="example-box">
+
+            <strong>
+                Midwifery example:
+            </strong>
+
+            <p>
+                Red blood cells transport oxygen throughout
+                the mother's and baby's body through the circulation.
+            </p>
+
+        </div>
+
+
+
+        <h2>
+            3. Tissue
+        </h2>
+
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                🧩
+            </div>
+
+            <div>
+
+                <h3>
+                    Tissue
+                </h3>
+
+                <p>
+                    Tissue is a group of similar cells that work
+                    together to perform a particular function.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            The four major types of human tissue are:
+        </p>
+
+        <ul>
+
+            <li>
+                Epithelial tissue
+            </li>
+
+            <li>
+                Connective tissue
+            </li>
+
+            <li>
+                Muscle tissue
+            </li>
+
+            <li>
+                Nervous tissue
+            </li>
+
+        </ul>
+
+
+
+        <h2>
+            4. Organ
+        </h2>
+
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                🫀
+            </div>
+
+            <div>
+
+                <h3>
+                    Organ
+                </h3>
+
+                <p>
+                    An organ is a structure made of two or more
+                    types of tissues working together to perform
+                    specific functions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            Examples of organs include the heart, lungs,
+            kidneys, liver and uterus.
+        </p>
+
+
+        <div class="example-box">
+
+            <strong>
+                Midwifery example:
+            </strong>
+
+            <p>
+                The uterus is an organ made of several tissues.
+                Its muscular layer, the myometrium, plays an
+                important role in uterine contractions during labour.
+            </p>
+
+        </div>
+
+
+
+        <h2>
+            5. Organ System
+        </h2>
+
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                ⚙️
+            </div>
+
+            <div>
+
+                <h3>
+                    Organ System
+                </h3>
+
+                <p>
+                    An organ system is a group of organs that
+                    work together to perform important functions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            Examples include:
+        </p>
+
+        <ul>
+
+            <li>
+                Cardiovascular system
+            </li>
+
+            <li>
+                Respiratory system
+            </li>
+
+            <li>
+                Digestive system
+            </li>
+
+            <li>
+                Nervous system
+            </li>
+
+            <li>
+                Urinary system
+            </li>
+
+            <li>
+                Reproductive system
+            </li>
+
+        </ul>
+
+
+
+        <h2>
+            6. Organism
+        </h2>
+
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                🧑
+            </div>
+
+            <div>
+
+                <h3>
+                    Organism
+                </h3>
+
+                <p>
+                    An organism is a complete living individual
+                    made up of interacting organ systems.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            A human being is an organism. All body systems work
+            together to maintain life and internal balance.
+        </p>
+
+
+
+        <h2>
+            7. Putting It All Together
+        </h2>
+
+
+        <div class="definition-box">
+
+            <strong>
+                Remember the order:
+            </strong>
+
+            <p>
+
+                Cell
+
+                ↓
+
+                Tissue
+
+                ↓
+
+                Organ
+
+                ↓
+
+                Organ System
+
+                ↓
+
+                Organism
+
+            </p>
+
+        </div>
+
+
+        <p>
+            For example, muscle cells can form muscle tissue.
+            Different tissues form an organ such as the uterus.
+            The uterus works with other reproductive organs
+            as part of the reproductive system.
+        </p>
+
+
+
+        <div class="important-box">
+
+            <strong>
+                🧠 Exam Tip
+            </strong>
+
+            <p>
+                If an examination asks for the levels of organization,
+                remember:
+            </p>
+
+            <p>
+                <strong>
+                    Cell → Tissue → Organ →
+                    Organ System → Organism
+                </strong>
+            </p>
+
+        </div>
+
+
+
+        <div class="review">
+
+            <h2>
+                🧠 Quick Review
+            </h2>
+
+
+            <div class="question">
+
+                <strong>
+                    1. What is the basic structural and
+                    functional unit of the body?
+                </strong>
+
+                <div class="answer">
+                    The cell.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    2. What is a tissue?
+                </strong>
+
+                <div class="answer">
+                    A group of similar cells working together
+                    to perform a particular function.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    3. Give two examples of organs.
+                </strong>
+
+                <div class="answer">
+                    Examples include the heart, lungs, kidneys,
+                    liver and uterus.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    4. What is an organ system?
+                </strong>
+
+                <div class="answer">
+                    A group of organs working together to perform
+                    important functions.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    5. Arrange these in the correct order:
+                    organ, cell, organism, tissue, organ system.
+                </strong>
+
+                <div class="answer">
+                    Cell → Tissue → Organ →
+                    Organ System → Organism.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="lesson-navigation">
+
+            <a href="lesson-anatomy-introduction.html"
+                class="secondary-btn">
+
+                ← Previous Lesson
+
+            </a>
+
+
+            <a href="lesson-anatomical-position.html" class="primary-btn">
+    Next Lesson →
+</a>
+
+        </div>
+
+
+    </article>
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                🤰 Midwife Connect Rwanda
+            </h3>
+
+            <p>
+                Learn • Care • Connect
+            </p>
+
+            <p>
+                Reproductive health and midwifery education
+                for Rwanda and beyond.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="student.html">
+                Students
+            </a>
+
+            <a href="pregnancy.html">
+                Pregnancy
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="midwife.html">
+                Midwives
+            </a>
+
+            <a href="youth.html">
+                Youth
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Midwife Connect Rwanda.
+            Founded by Kwizera Felix.
+        </p>
+
+        <p>
+            Educational information only — not a replacement
+            for professional medical care.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<div id="mcr-complete" style="max-width:900px;margin:25px auto;padding:18px;background:#fff;border:1px solid #e2ebe8;border-radius:14px">
+<button type="button" id="completeLesson" style="padding:11px 16px;border:0;border-radius:9px;background:#8b4f82;color:#fff;font-weight:700">Mark lesson complete ✓</button>
+<span id="progressStatus" style="margin-left:12px;color:#5d6d69"></span>
+</div>
+<script>
+(function(){
+ const slug="lesson-anatomy-levels";
+ const btn=document.getElementById("completeLesson"), status=document.getElementById("progressStatus");
+ function refresh(){if(MCRProgress.isComplete(slug)){btn.textContent="Lesson completed ✓";status.textContent="Saved on this device";btn.disabled=true;}}
+ btn.addEventListener("click",()=>{MCRProgress.complete(slug);refresh();});
+ refresh();
+})();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Dashboard | Midwife Connect Rwanda</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth-guard.js"></script>
+<script src="../js/progress.js"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f6faf9;
+            color: #263b38;
+        }
+
+        .dashboard-page {
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+
+        .dashboard-header {
+            background: white;
+            border-bottom: 1px solid #e4ecea;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .dashboard-nav {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .dashboard-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #263b38;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .dashboard-logo-icon {
+            font-size: 32px;
+        }
+
+        .dashboard-logo small {
+            display: block;
+            color: #8b4f82;
+            font-size: 12px;
+        }
+
+        .dashboard-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .home-btn,
+        .logout-btn {
+            padding: 10px 15px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .home-btn {
+            color: #657572;
+            background: #f3f7f6;
+        }
+
+        .logout-btn {
+            border: none;
+            background: #8b4f82;
+            color: white;
+        }
+
+        /* MAIN */
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px 70px;
+        }
+
+        /* WELCOME */
+
+        .welcome-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #7e4778,
+                    #9c6196
+                );
+
+            color: white;
+
+            padding: 35px;
+
+            border-radius: 22px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        .welcome-card h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+        }
+
+        .welcome-card p {
+            margin: 0;
+            opacity: 0.92;
+            line-height: 1.6;
+        }
+
+        .profile-circle {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.18);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 42px;
+
+            flex-shrink: 0;
+        }
+
+        /* USER INFO */
+
+        .user-info-card {
+            background: white;
+
+            border: 1px solid #e3ece9;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            margin-bottom: 35px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .user-info-item {
+            padding: 10px;
+        }
+
+        .user-info-item span {
+            display: block;
+
+            color: #7b8986;
+
+            font-size: 13px;
+
+            margin-bottom: 6px;
+        }
+
+        .user-info-item strong {
+            font-size: 16px;
+        }
+
+        /* SECTION TITLE */
+
+        .section-title {
+            margin: 35px 0 18px;
+        }
+
+        .section-title h2 {
+            margin: 0 0 5px;
+            font-size: 26px;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: #73827f;
+        }
+
+        /* CARDS */
+
+        .dashboard-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+
+            border: 1px solid #e2ebe8;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            transition: 0.2s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(50,70,70,0.08);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 15px;
+
+            background: #f6edf5;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 28px;
+
+            margin-bottom: 18px;
+        }
+
+        .dashboard-card h3 {
+            margin: 0 0 8px;
+
+            font-size: 20px;
+        }
+
+        .dashboard-card p {
+            color: #6c7b78;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+
+            min-height: 45px;
+        }
+
+        .card-button {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 10px 15px;
+
+            background: #8b4f82;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+        /* PROGRESS */
+
+        .progress-card {
+            background: white;
+
+            border: 1px solid #e2ebe8;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            margin-top: 30px;
+        }
+
+        .progress-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .progress-top strong {
+            font-size: 17px;
+        }
+
+        .progress-top span {
+            color: #8b4f82;
+
+            font-weight: 800;
+        }
+
+        .progress-bar {
+            width: 100%;
+
+            height: 12px;
+
+            background: #edf2f0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+
+            width: 0%;
+
+            background: #8b4f82;
+
+            border-radius: 20px;
+
+            transition: width 0.6s ease;
+        }
+
+        .progress-note {
+            margin-top: 12px;
+
+            color: #75827f;
+
+            font-size: 13px;
+        }
+
+        /* QUICK LINKS */
+
+        .quick-links {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .quick-link {
+            background: white;
+
+            border: 1px solid #e2ebe8;
+
+            border-radius: 14px;
+
+            padding: 18px;
+
+            text-decoration: none;
+
+            color: #344845;
+
+            font-weight: 700;
+
+            text-align: center;
+        }
+
+        .quick-link:hover {
+            border-color: #8b4f82;
+
+            color: #8b4f82;
+        }
+
+        /* LOGOUT MODAL */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(20,30,30,0.45);
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 500;
+        }
+
+        .modal-content {
+            background: white;
+
+            width: 100%;
+
+            max-width: 420px;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+        }
+
+        .cancel-btn {
+            border: 1px solid #dce5e2;
+
+            background: white;
+        }
+
+        .confirm-logout {
+            border: none;
+
+            background: #8b4f82;
+
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .dashboard-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .quick-links {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .user-info-card {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .dashboard-nav {
+                align-items: flex-start;
+            }
+
+            .home-btn {
+                display: none;
+            }
+
+            .welcome-card {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .profile-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 32px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .user-info-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .dashboard-actions {
+                gap: 5px;
+            }
+
+            .logout-btn {
+                padding: 9px 10px;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-page">
+
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-nav">
+
+
+            <a
+                href="../index.html"
+                class="dashboard-logo"
+            >
+
+                <span class="dashboard-logo-icon">
+                    🤰
+                </span>
+
+                <span>
+
+                    <strong>
+                        Midwife Connect
+                    </strong>
+
+                    <small>
+                        Rwanda
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <div class="dashboard-actions">
+
+                <a
+                    href="../index.html"
+                    class="home-btn"
+                >
+                    Home
+                </a>
+
+
+                <button
+                    class="logout-btn"
+                    onclick="openLogoutModal()"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-container">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-card">
+
+
+            <div>
+
+                <h1>
+                    <span data-user-name>Welcome</span>, <span id="userName">User</span> 👋
+                </h1>
+
+                <p>
+                    Welcome to your Midwife Connect Rwanda
+                    learning dashboard. Continue your learning
+                    journey today.
+                </p>
+
+            </div>
+
+
+            <div class="profile-circle">
+                👤
+            </div>
+
+
+        </section>
+
+
+
+        <!-- USER INFORMATION -->
+
+        <section class="user-info-card">
+
+
+            <div class="user-info-item">
+
+                <span>
+                    Full Name
+                </span>
+
+                <strong id="profileName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="user-info-item">
+
+                <span>
+                    Email
+                </span>
+
+                <strong id="profileEmail">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="user-info-item">
+
+                <span>
+                    Account Type
+                </span>
+
+                <strong id="profileType">
+                    —
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- LEARNING -->
+
+        <div class="section-title">
+
+            <h2>
+                📚 My Learning
+            </h2>
+
+            <p>
+                Continue studying and improve your
+                midwifery knowledge.
+            </p>
+
+        </div>
+
+
+        <section class="dashboard-grid">
+
+
+            <!-- LESSONS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Midwifery Lessons
+                </h3>
+
+                <p>
+                    Access anatomy, physiology,
+                    reproductive health and
+                    midwifery lessons.
+                </p>
+
+                <a
+                    href="student.html"
+                    class="card-button"
+                >
+                    View Lessons
+                </a>
+
+            </div>
+
+
+
+            <!-- ANATOMY -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Anatomy & Physiology
+                </h3>
+
+                <p>
+                    Review human anatomy,
+                    reproductive anatomy and
+                    physiological processes.
+                </p>
+
+                <a
+                    href="anatomy.html"
+                    class="card-button"
+                >
+                    Study Anatomy
+                </a>
+
+            </div>
+
+
+
+            <!-- QUIZ -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Quizzes
+                </h3>
+
+                <p>
+                    Test your knowledge with
+                    midwifery and reproductive
+                    health questions.
+                </p>
+
+                <a
+                    href="quiz.html"
+                    class="card-button"
+                >
+                    Take Quiz
+                </a>
+
+            </div>
+
+
+
+            <!-- PREGNANCY -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🤰
+                </div>
+
+                <h3>
+                    Pregnancy
+                </h3>
+
+                <p>
+                    Learn about antenatal care,
+                    pregnancy development and
+                    maternal health.
+                </p>
+
+                <a
+                    href="pregnancy.html"
+                    class="card-button"
+                >
+                    Pregnancy
+                </a>
+
+            </div>
+
+
+
+            <!-- MIDWIVES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    👩‍⚕️
+                </div>
+
+                <h3>
+                    Midwife Resources
+                </h3>
+
+                <p>
+                    Explore resources designed
+                    for practicing midwives.
+                </p>
+
+                <a
+                    href="midwife.html"
+                    class="card-button"
+                >
+                    Resources
+                </a>
+
+            </div>
+
+
+
+            <!-- YOUTH -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Youth Health
+                </h3>
+
+                <p>
+                    Access reproductive health
+                    information designed for
+                    young people.
+                </p>
+
+                <a
+                    href="youth.html"
+                    class="card-button"
+                >
+                    Explore
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="section-title">
+
+            <h2>
+                📊 My Learning Progress
+            </h2>
+
+            <p>
+                Your course progress will appear here.
+            </p>
+
+        </div>
+
+
+        <section class="progress-card">
+
+
+            <div class="progress-top">
+
+                <strong>
+                    Anatomy & Physiology
+                </strong>
+
+                <span id="progressPercent">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+
+            <p class="progress-note">
+
+                Lessons completed:
+                <strong id="lessonsCompleted">
+                    0
+                </strong>
+                / 16
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="section-title">
+
+            <h2>
+                ⚡ Quick Access
+            </h2>
+
+        </div>
+
+
+        <section class="quick-links">
+
+
+            <a
+                href="student.html"
+                class="quick-link"
+            >
+                🎓 Student Area
+            </a>
+
+
+            <a
+                href="quiz.html"
+                class="quick-link"
+            >
+                🧠 Quiz
+            </a>
+
+
+            <a
+                href="pregnancy.html"
+                class="quick-link"
+            >
+                🤰 Pregnancy
+            </a>
+
+
+            <a
+                href="../index.html"
+                class="quick-link"
+            >
+                🏠 Home
+            </a>
+
+
+        </section>
+
+
+    <section style="margin:30px 0;display:flex;flex-wrap:wrap;gap:12px">
+<a href="quiz.html" style="padding:13px 18px;background:#8b4f82;color:#fff;border-radius:10px;text-decoration:none;font-weight:700">📝 Take a Quiz</a>
+<a href="certificate.html" style="padding:13px 18px;background:#f0f5f3;color:#29423d;border-radius:10px;text-decoration:none;font-weight:700">🏆 Certificate</a>
+</section><section id="mcr-cloud-progress" style="max-width:900px;margin:25px auto;padding:22px;background:#fff;border:1px solid #e1ebe8;border-radius:16px">
+<h2>📊 Learning Progress</h2><p id="mcrProgressText">Syncing your progress...</p>
+<div style="height:12px;background:#e8efed;border-radius:12px;overflow:hidden"><div id="mcrProgressBar" style="height:100%;width:0;background:#8b4f82"></div></div>
+</section></main>
+
+</div>
+
+
+
+<!-- LOGOUT MODAL -->
+
+<div
+    id="logoutModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <h3>
+            Logout?
+        </h3>
+
+        <p>
+            Are you sure you want to log out
+            of your Midwife Connect account?
+        </p>
+
+
+        <div class="modal-buttons">
+
+            <button
+                class="cancel-btn"
+                onclick="closeLogoutModal()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="confirm-logout"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    /* CHECK LOGIN */
+
+    const loggedIn =
+        localStorage.getItem(
+            "midwifeConnectLoggedIn"
+        );
+
+
+    if (loggedIn !== "true") {
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+
+    /* LOAD USER */
+
+    const savedUser =
+        localStorage.getItem(
+            "midwifeConnectUser"
+        );
+
+
+    if (savedUser) {
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        document.getElementById(
+            "userName"
+        ).textContent =
+            user.name;
+
+
+        document.getElementById(
+            "profileName"
+        ).textContent =
+            user.name;
+
+
+        document.getElementById(
+            "profileEmail"
+        ).textContent =
+            user.email;
+
+
+        document.getElementById(
+            "profileType"
+        ).textContent =
+            formatUserType(
+                user.userType
+            );
+
+    }
+
+
+
+    /* USER TYPE */
+
+    function formatUserType(type) {
+
+        const types = {
+
+            student:
+                "Student Midwife",
+
+            midwife:
+                "Registered Midwife",
+
+            pregnant:
+                "Pregnant Woman",
+
+            youth:
+                "Youth"
+
+        };
+
+
+        return types[type] || type;
+
+    }
+
+
+
+    /* LOGOUT MODAL */
+
+    function openLogoutModal() {
+
+        document.getElementById(
+            "logoutModal"
+        ).style.display = "flex";
+
+    }
+
+
+    function closeLogoutModal() {
+
+        document.getElementById(
+            "logoutModal"
+        ).style.display = "none";
+
+    }
+
+
+
+    /* LOGOUT */
+
+    function logout() {
+
+        localStorage.removeItem(
+            "midwifeConnectLoggedIn"
+        );
+
+        localStorage.removeItem(
+            "midwifeConnectUser"
+        );
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+
+    /* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+    window.addEventListener(
+        "click",
+        function(event) {
+
+            const modal =
+                document.getElementById(
+                    "logoutModal"
+                );
+
+            if (event.target === modal) {
+
+                closeLogoutModal();
+
+            }
+
+        }
+    );
+
+
+</script>
+
+
+<script>
+(async function(){
+ const total=16;
+ if(window.MCRProgress){
+   await MCRProgress.refresh();
+   const pct=MCRProgress.percent(total);
+   const text=document.getElementById("mcrProgressText");
+   const bar=document.getElementById("mcrProgressBar");
+   if(text) text.textContent=pct+"% of the Anatomy & Physiology learning path completed";
+   if(bar) bar.style.width=pct+"%";
+ }
+})();
+</script>
+</body>
+
+</html>

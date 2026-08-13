@@ -1,122 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
 
-<meta charset="UTF-8">
+    <title>Create Account | Midwife Connect Rwanda</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
 
-<title>Create Account</title>
+    <style>
 
-<link rel="stylesheet" href="../css/style.css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f8fbfa;
+        }
+
+        .register-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff5f8 0%,
+                    #f4fbfa 50%,
+                    #f7f1ff 100%
+                );
+        }
+
+        .register-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(50, 70, 70, 0.12);
+        }
+
+        /* LEFT SIDE */
+
+        .register-info {
+            padding: 55px 45px;
+            background: linear-gradient(145deg, #7e4778, #9c6196);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-logo {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .register-info h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            margin: 0 0 18px;
+        }
+
+        .register-info p {
+            line-height: 1.7;
+            opacity: 0.92;
+            font-size: 16px;
+        }
+
+        .benefit-list {
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .benefit-list li {
+            margin: 18px 0;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .benefit-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* FORM SIDE */
+
+        .register-form-area {
+            padding: 50px;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            margin: 0 0 8px;
+            font-size: 30px;
+            color: #263b38;
+        }
+
+        .form-header p {
+            color: #70807d;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #354a47;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #d8e2df;
+            border-radius: 11px;
+            outline: none;
+            font-size: 15px;
+            background: #fff;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #8b4f82;
+            box-shadow: 0 0 0 3px rgba(139,79,130,0.08);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 50px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .terms {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin: 15px 0 25px;
+            color: #657572;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 4px;
+        }
+
+        .terms a {
+            color: #8b4f82;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-button {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            background: #8b4f82;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .register-button:hover {
+            background: #733e6b;
+            transform: translateY(-1px);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #697975;
+            font-size: 15px;
+        }
+
+        .login-link a {
+            color: #8b4f82;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .message {
+            display: none;
+            margin-bottom: 20px;
+            padding: 13px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .message.error {
+            display: block;
+            background: #fff0f0;
+            color: #b63232;
+            border: 1px solid #f0caca;
+        }
+
+        .message.success {
+            display: block;
+            background: #eefaf3;
+            color: #247348;
+            border: 1px solid #c9e8d5;
+        }
+
+        .password-strength {
+            margin-top: 7px;
+            font-size: 13px;
+            color: #788784;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .register-wrapper {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .register-info {
+                padding: 40px 30px;
+            }
+
+            .register-info h1 {
+                font-size: 31px;
+            }
+
+            .register-form-area {
+                padding: 35px 25px;
+            }
+
+            .benefit-list {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .register-page {
+                padding: 20px 10px;
+            }
+
+            .register-info {
+                padding: 30px 22px;
+            }
+
+            .register-form-area {
+                padding: 30px 20px;
+            }
+
+            .form-header h2 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
 
 </head>
-
 
 
 <body>
 
 
-<section class="login-page">
+<div class="register-page">
+
+    <div class="register-wrapper">
 
 
-<div class="login-card">
+        <!-- LEFT INFORMATION -->
+
+        <section class="register-info">
+
+            <div class="register-logo">
+                🤰
+            </div>
+
+            <h1>
+                Welcome to<br>
+                Midwife Connect Rwanda
+            </h1>
+
+            <p>
+                Create your account and join a growing learning
+                and reproductive health community.
+            </p>
 
 
-<div class="login-logo">
+            <ul class="benefit-list">
 
-<h1>🩺</h1>
+                <li>
+                    <span class="benefit-icon">📚</span>
+                    Access midwifery learning resources
+                </li>
 
-<h2>Join Midwife Connect Rwanda</h2>
+                <li>
+                    <span class="benefit-icon">🧠</span>
+                    Practice with quizzes and lessons
+                </li>
 
-<p>Your health learning partner</p>
+                <li>
+                    <span class="benefit-icon">🤰</span>
+                    Learn about pregnancy and reproductive health
+                </li>
+
+                <li>
+                    <span class="benefit-icon">🌍</span>
+                    Connect with the Midwife Connect community
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- REGISTRATION FORM -->
+
+        <section class="register-form-area">
+
+            <div class="form-header">
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p>
+                    Fill in your information to get started.
+                </p>
+
+            </div>
+
+
+            <div id="message" class="message"></div>
+
+
+            <form id="registerForm">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- USER TYPE -->
+
+                <div class="form-group">
+
+                    <label for="userType">
+                        I am a
+                    </label>
+
+                    <select id="userType" required>
+
+                        <option value="">
+                            Select your user type
+                        </option>
+
+                        <option value="student">
+                            Student Midwife
+                        </option>
+
+                        <option value="midwife">
+                            Registered Midwife
+                        </option>
+
+                        <option value="pregnant">
+                            Pregnant Woman
+                        </option>
+
+                        <option value="youth">
+                            Youth
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('password', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <div id="passwordStrength"
+                         class="password-strength">
+
+                        Use at least 8 characters.
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword('confirmPassword', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="#">
+                            Terms of Use
+                        </a>
+                        and
+                        <a href="#">
+                            Privacy Policy
+                        </a>.
+                    </span>
+
+                </label>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+                    Create Account
+                </button>
+
+
+            </form>
+
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
 
 </div>
 
 
 
-<input 
-id="name"
-placeholder="Full Name">
+<script>
+const registerForm = document.getElementById("registerForm");
+const message = document.getElementById("message");
 
+function showError(text) { message.textContent = text; message.className = "message error"; }
+function showSuccess(text) { message.textContent = text; message.className = "message success"; }
 
+registerForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+  const roleEl = document.getElementById("userType");
+  const userType = roleEl ? roleEl.value : "student";
 
-<input 
-id="email"
-placeholder="Email">
+  if (!name) return showError("Please enter your full name.");
+  if (!/^\S+@\S+\.\S+$/.test(email)) return showError("Please enter a valid email address.");
+  if (password.length < 8) return showError("Password must contain at least 8 characters.");
+  if (password !== confirmPassword) return showError("Passwords do not match.");
 
+  const button = registerForm.querySelector("button[type='submit']");
+  if (button) { button.disabled = true; button.textContent = "Creating account..."; }
 
+  const redirectTo = location.href.replace(/register\.html(?:\?.*)?$/, "login.html");
+  const { error } = await mcrSupabase.auth.signUp({
+    email, password,
+    options: { data: { name, userType }, emailRedirectTo: redirectTo }
+  });
 
-<input 
-id="password"
-type="password"
-placeholder="Password">
+  if (error) {
+    showError(error.message);
+    if (button) { button.disabled = false; button.textContent = "Create Account"; }
+    return;
+  }
 
-
-
-<select id="role">
-
-<option>
-Choose Account Type
-</option>
-
-<option value="student">
-🎓 Student Midwife
-</option>
-
-<option value="midwife">
-👩‍⚕️ Registered Midwife
-</option>
-
-<option value="pregnant">
-🤰 Pregnant Woman
-</option>
-
-<option value="youth">
-🧑 Youth
-</option>
-
-<option value="pharmacist">
-💊 Pharmacist
-</option>
-
-</select>
-
-
-
-
-<button 
-class="main-btn"
-onclick="registerUser()">
-
-Create Account
-
-</button>
-
-
-
-<p>
-
-Already registered?
-
-<a href="login.html">
-Login
-</a>
-
-</p>
-
-
-
-</div>
-
-
-</section>
-
-
-
-<script src="../js/auth.js"></script>
+  showSuccess("Account created. Check your email to verify your account, then log in.");
+  registerForm.reset();
+  if (button) { button.disabled = false; button.textContent = "Create Account"; }
+});
+</script>
 
 
 </body>

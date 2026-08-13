@@ -1,1495 +1,510 @@
-*{
+/* =========================
+MIDWIFE CONNECT RWANDA
+MAIN WEBSITE STYLES
+========================= */
 
-margin:0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
-padding:0;
-
-box-sizing:border-box;
-
-font-family:Arial,sans-serif;
-
-}
-
-
-
-body{
-
-background:#f5f9fc;
-
-color:#333;
-
-}
-
-
-
-.header{
-background:#0B6E99;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-flex-wrap:wrap;
-gap:15px;
-}
-
-
-
-
-.logo h1{
-
-font-size:28px;
-
-}
-
-
-
-.logo p{
-
-color:#FFD700;
-
-}
-
-
-
-nav{
-display:flex;
-align-items:center;
-gap:12px;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-padding:8px 12px;
-border-radius:6px;
-transition:0.3s;
-}
-
-nav a:hover{
-background:rgba(255,255,255,0.15);
-}
-
-
-
-
-nav select{
-
-padding:8px;
-
-border-radius:5px;
-
-}
-
-
-
-.login-btn{
-
-background:#28A745;
-
-padding:10px;
-
-border-radius:5px;
-
-}
-
-
-
-
-
-.hero{
-
-background:linear-gradient(
-rgba(11,110,153,.8),
-rgba(11,110,153,.8)
-);
-
-color:white;
-
-text-align:center;
-
-padding:120px 30px;
-
-}
-
-
-
-.hero h2{
-
-font-size:45px;
-
-}
-
-
-
-.hero p{
-
-font-size:20px;
-
-margin:20px;
-
-}
-
-
-
-.hero button{
-
-background:#FFD700;
-
-border:none;
-
-padding:15px 40px;
-
-font-size:18px;
-
-border-radius:8px;
-
-}
-
-
-
-
-.services{
-
-padding:60px;
-
-}
-
-
-
-.services h2{
-
-text-align:center;
-
-color:#0B6E99;
-
-}
-
-
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-
-footer{
-
-background:#06384D;
-
-color:white;
-
-text-align:center;
-
-padding:30px;
-
-}
-/* ======================
-FOUNDER DASHBOARD
-====================== */
-
-
-.admin-dashboard{
-
-padding:60px;
-
-background:#f5f9fc;
-
-min-height:100vh;
-
-}
-
-
-
-.admin-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.admin-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.admin-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.admin-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.admin-card h2{
-
-color:#0B6E99;
-
-margin-bottom:15px;
-
-}
-
-
-
-.admin-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-STUDENT DASHBOARD
-===================== */
-
-
-.student-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.student-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.student-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.student-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.student-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.student-card h2{
-
-color:#0B6E99;
-
-}
-
-
-
-.student-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-REGISTERED MIDWIFE
-===================== */
-
-
-.midwife-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.midwife-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.midwife-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.midwife-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.midwife-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.midwife-card h2{
-
-color:#0B6E99;
-
-}
-
-
-
-.midwife-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-PREGNANCY DASHBOARD
-===================== */
-
-
-.pregnancy-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.pregnancy-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.pregnancy-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.pregnancy-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.pregnancy-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.pregnancy-card h2{
-
-color:#0B6E99;
-
-}
-
-
-
-.pregnancy-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-EDD CALCULATOR
-===================== */
-
-
-.edd-calculator{
-
-background:white;
-
-margin:50px;
-
-padding:40px;
-
-text-align:center;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-.edd-calculator h2{
-
-color:#0B6E99;
-
-margin-bottom:20px;
-
-}
-
-
-
-.edd-calculator input{
-
-padding:12px;
-
-border:1px solid #ccc;
-
-border-radius:8px;
-
-}
-
-
-
-.edd-calculator button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-cursor:pointer;
-
-margin-left:10px;
-
-}
-
-
-
-#eddResult{
-
-margin-top:20px;
-
-color:#0B6E99;
-
-}
-/* =====================
-YOUTH DASHBOARD
-===================== */
-
-
-.youth-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.youth-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.youth-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.youth-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.youth-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.youth-card h2{
-
-color:#0B6E99;
-
-}
-
-
-
-.youth-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-PHARMACY CENTER
-===================== */
-
-
-.pharmacy-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.pharmacy-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.pharmacy-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.pharmacy-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
-}
-
-
-
-.pharmacy-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-}
-
-
-
-.pharmacy-card h2{
-
-color:#0B6E99;
-
-}
-
-
-
-.pharmacy-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:8px;
-
-margin-top:20px;
-
-cursor:pointer;
-
-}
-/* =====================
-QUIZ CENTER
-===================== */
-
-
-.quiz-dashboard{
-
-padding:60px;
-
-min-height:100vh;
-
-}
-
-
-
-.quiz-dashboard h1{
-
-text-align:center;
-
-color:#0B6E99;
-
-font-size:40px;
-
-}
-
-
-
-.quiz-dashboard>p{
-
-text-align:center;
-
-margin:20px;
-
-}
-
-
-
-.quiz-cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-margin-top:40px;
-
+html {
+scroll-behavior: smooth;
 }
-
-
 
-.quiz-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
+body {
+font-family: Arial, Helvetica, sans-serif;
+color: #183b3a;
+background: #ffffff;
+line-height: 1.6;
 }
-
-
-
-.quiz-card h2{
 
-color:#0B6E99;
-
+a {
+text-decoration: none;
+color: inherit;
 }
-
-
-
-.quiz-card button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
 
-border-radius:8px;
-
+.container {
+width: min(1120px, 92%);
+margin: auto;
 }
-
-
-
-.question-box{
-
-background:white;
-
-padding:40px;
-
-margin-top:50px;
-
-border-radius:15px;
 
-box-shadow:0 5px 15px #ccc;
+/* =========================
+HEADER
+========================= */
 
+.header {
+background: #ffffff;
+border-bottom: 1px solid #e6eeee;
+position: sticky;
+top: 0;
+z-index: 1000;
 }
-/* =====================
-LOGIN REGISTER
-===================== */
 
-
-.auth-box{
-
-width:90%;
-
-max-width:450px;
-
-margin:80px auto;
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px #ccc;
-
-text-align:center;
-
+.nav-container {
+min-height: 76px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
 }
-
-
-
-.auth-box input,
-.auth-box select{
-
-width:100%;
-
-padding:15px;
-
-margin:10px 0;
 
-border:1px solid #ccc;
-
-border-radius:8px;
-
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
 }
-
-
-
-.auth-box button{
-
-background:#28A745;
-
-color:white;
-
-border:none;
 
-padding:15px 40px;
-
-border-radius:8px;
-
-cursor:pointer;
-
-margin-top:15px;
-
+.logo-icon {
+font-size: 34px;
 }
-/* =====================
-BEAUTIFUL ADMIN DASHBOARD
-===================== */
-
-
-.admin-layout{
-
-display:flex;
-
-min-height:100vh;
 
-background:#f5f9fc;
-
+.logo strong {
+display: block;
+font-size: 18px;
 }
-
-
-
-.sidebar{
-
-width:260px;
-
-background:#06384D;
-
-color:white;
-
-padding:30px;
 
+.logo small {
+display: block;
+font-size: 12px;
+color: #008b7a;
 }
 
-
-
-.sidebar h2{
-
-font-size:35px;
-
-color:#FFD700;
-
+.navbar {
+display: flex;
+gap: 22px;
 }
-
-
-
-.sidebar a{
 
-display:block;
-
-color:white;
-
-text-decoration:none;
-
-padding:15px 5px;
-
-margin-top:10px;
-
-border-radius:8px;
-
+.navbar a {
+font-size: 14px;
+font-weight: 600;
+transition: 0.3s;
 }
-
-
 
-.sidebar a:hover{
-
-background:#0B6E99;
-
+.navbar a:hover {
+color: #008b7a;
 }
-
-
 
-.admin-content{
-
-flex:1;
-
-padding:50px;
-
+.nav-actions {
+display: flex;
+align-items: center;
+gap: 10px;
 }
-
 
-
-.admin-content h1{
-
-color:#0B6E99;
-
-font-size:40px;
-
+.language-select {
+padding: 8px;
+border: 1px solid #d6e5e3;
+border-radius: 8px;
+background: white;
 }
-
-
-
-.stats{
-
-display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(200px,1fr));
-
-gap:25px;
-
-margin-top:40px;
-
+.login-btn {
+font-weight: 600;
 }
-
-
-
-.stat-card{
-
-background:white;
-
-padding:30px;
 
-border-radius:20px;
-
-box-shadow:0 8px 20px #ddd;
-
+.menu-btn {
+display: none;
+border: none;
+background: transparent;
+font-size: 26px;
+cursor: pointer;
 }
-
-
 
-.stat-card h2{
+/* =========================
+HERO
+========================= */
 
-font-size:40px;
-
+.hero {
+background: linear-gradient(135deg, #eafaf7, #f8fffd);
+padding: 90px 0;
 }
-
-
-
-.stat-card p{
 
-font-size:30px;
-
-color:#28A745;
-
+.hero-content {
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 60px;
+align-items: center;
 }
-
-
-
-
-
-.welcome-box{
-
-background:white;
 
-margin-top:40px;
-
-padding:40px;
-
-border-radius:20px;
-
-box-shadow:0 8px 20px #ddd;
-
+.welcome-badge {
+display: inline-block;
+background: #ffffff;
+border: 1px solid #d6ebe7;
+padding: 8px 15px;
+border-radius: 30px;
+margin-bottom: 20px;
+font-size: 14px;
+font-weight: 600;
 }
-
-
-
-.welcome-box button{
-
-background:#28A745;
 
-color:white;
-
-border:none;
-
-padding:15px 30px;
-
-margin:10px;
-
-border-radius:10px;
-
+.hero h1 {
+font-size: clamp(44px, 6vw, 72px);
+line-height: 1.05;
+margin-bottom: 22px;
 }
-/* =====================
-BEAUTIFUL LOGIN SYSTEM
-===================== */
-
-
-.login-page{
-
-min-height:100vh;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:
-linear-gradient(
-135deg,
-#0B6E99,
-#28A745
-);
-
+.hero h1 span {
+color: #008b7a;
 }
-
-
-
-.login-card{
-
-background:white;
 
-width:90%;
-
-max-width:420px;
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.2);
-
-text-align:center;
-
+.hero-description {
+max-width: 650px;
+font-size: 19px;
+color: #506866;
+margin-bottom: 30px;
 }
-
-
 
-.login-logo h1{
-
-font-size:60px;
-
+.hero-buttons {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
 }
-
-
 
-.login-logo h2{
-
-color:#0B6E99;
-
+.primary-btn,
+.secondary-btn {
+display: inline-block;
+padding: 14px 23px;
+border-radius: 10px;
+font-weight: 700;
+transition: 0.3s;
 }
-
-
 
-.login-logo p{
-
-color:#28A745;
-
+.primary-btn {
+background: #008b7a;
+color: white;
 }
-
-
-
-.login-card input,
-.login-card select{
-
-width:100%;
-
-padding:15px;
-
-margin:12px 0;
 
-border-radius:10px;
-
-border:1px solid #ddd;
-
-font-size:16px;
-
+.primary-btn:hover {
+background: #006f62;
+transform: translateY(-2px);
 }
-
 
-
-.password-box{
-
-display:flex;
-
+.secondary-btn {
+border: 1px solid #008b7a;
+color: #008b7a;
+background: white;
 }
-
 
-
-.password-box input{
-
-flex:1;
-
+.secondary-btn:hover {
+background: #eafaf7;
 }
-
-
-
-.password-box button{
-
-width:50px;
-
-border:none;
 
-background:#eee;
-
+.hero-info {
+display: flex;
+gap: 25px;
+margin-top: 35px;
+flex-wrap: wrap;
 }
-
-
-
-.main-btn{
-
-width:100%;
-
-padding:15px;
-
-background:#28A745;
-
-color:white;
 
-border:none;
-
-border-radius:10px;
-
-font-size:18px;
-
-cursor:pointer;
-
-margin:15px 0;
-
+.hero-info div {
+display: flex;
+align-items: center;
+gap: 7px;
+font-size: 14px;
+font-weight: 600;
 }
-
 
-
-.main-btn:hover{
+.hero-info strong {
+font-size: 20px;
+}
 
-background:#0B6E99;
+/* HERO CARD */
 
+.hero-card {
+background: white;
+padding: 35px;
+border-radius: 24px;
+box-shadow: 0 20px 60px rgba(0, 70, 65, 0.12);
+border: 1px solid #e1eeee;
 }
-.logout-btn{
 
-background:#dc3545;
-
-color:white;
+.hero-card-icon {
+font-size: 55px;
+margin-bottom: 20px;
+}
 
-border:none;
+.hero-card h2 {
+font-size: 28px;
+line-height: 1.2;
+margin-bottom: 15px;
+}
 
-padding:10px 20px;
+.hero-card p {
+color: #607572;
+margin-bottom: 20px;
+}
 
-border-radius:8px;
+.hero-card-list {
+display: grid;
+gap: 10px;
+color: #008b7a;
+font-weight: 600;
+}
 
-cursor:pointer;
+/* =========================
+SERVICES
+========================= */
 
-font-weight:bold;
+.services {
+padding: 90px 0;
+}
 
+.section-heading {
+text-align: center;
+max-width: 700px;
+margin: 0 auto 45px;
 }
 
+.section-heading span,
+.section-label {
+color: #008b7a;
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 1.5px;
+}
 
-.logout-btn:hover{
+.section-heading h2 {
+font-size: 38px;
+line-height: 1.2;
+margin: 10px 0;
+}
 
-background:#a71d2a;
+.section-heading p {
+color: #647775;
+}
 
+.service-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 22px;
 }
-.plans{
 
-display:flex;
+.service-card {
+padding: 28px;
+border: 1px solid #e2eceb;
+border-radius: 18px;
+background: white;
+transition: 0.3s;
+}
 
-justify-content:center;
+.service-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 15px 40px rgba(0, 80, 75, 0.10);
+border-color: #a9d9d3;
+}
 
-gap:40px;
+.service-icon {
+font-size: 40px;
+margin-bottom: 18px;
+}
 
-padding:60px;
+.service-card h3 {
+font-size: 21px;
+margin-bottom: 10px;
+}
 
-flex-wrap:wrap;
+.service-card p {
+color: #647775;
+margin-bottom: 20px;
+}
 
+.service-card span {
+color: #008b7a;
+font-weight: 700;
 }
 
-.plan{
+/* =========================
+ABOUT
+========================= */
 
-background:white;
+.about {
+background: #f4faf9;
+padding: 70px 0;
+}
 
-padding:35px;
+.about-content {
+display: grid;
+grid-template-columns: 120px 1fr;
+gap: 35px;
+align-items: center;
+}
 
-width:330px;
+.about-icon {
+font-size: 70px;
+text-align: center;
+}
 
-border-radius:20px;
+.about h2 {
+font-size: 34px;
+line-height: 1.25;
+margin: 10px 0 15px;
+}
 
-box-shadow:0 10px 20px rgba(0,0,0,.15);
+.about p {
+color: #5f706e;
+max-width: 800px;
+}
 
-text-align:center;
+/* =========================
+CTA
+========================= */
 
+.cta {
+text-align: center;
+padding: 90px 20px;
+background: #008b7a;
+color: white;
 }
-
-.free{
 
-border-top:8px solid #28A745;
+.cta h2 {
+font-size: 42px;
+margin-bottom: 12px;
+}
 
+.cta p {
+max-width: 650px;
+margin: 0 auto 28px;
+opacity: 0.9;
 }
 
-.premium{
+.cta .primary-btn {
+background: white;
+color: #008b7a;
+}
 
-border-top:8px solid gold;
+/* =========================
+FOOTER
+========================= */
 
+.footer {
+background: #103332;
+color: white;
+padding-top: 55px;
 }
 
-.plan h3{
-
-font-size:30px;
+.footer-content {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr;
+gap: 50px;
+padding-bottom: 45px;
+}
 
-margin:20px 0;
+.footer h3 {
+margin-bottom: 10px;
+}
 
+.footer h4 {
+margin-bottom: 15px;
 }
 
-.plan ul{
+.footer p {
+color: #b9cdca;
+}
 
-text-align:left;
+.footer a {
+display: block;
+color: #b9cdca;
+margin-bottom: 8px;
+}
 
-margin:20px 0;
+.footer a:hover {
+color: white;
+}
 
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,0.12);
+padding: 20px 4%;
+text-align: center;
+font-size: 13px;
 }
 
-.plan li{
+/* =========================
+MOBILE
+========================= */
 
-margin:10px 0;
+@media (max-width: 900px) {
 
+```
+.navbar {
+    display: none;
 }
 
-.plan button{
-
-background:#0B6E99;
-
-color:white;
+.menu-btn {
+    display: block;
+}
 
-padding:15px 25px;
+.hero-content {
+    grid-template-columns: 1fr;
+}
 
-border:none;
+.service-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
 
-border-radius:10px;
+.footer-content {
+    grid-template-columns: 1fr 1fr;
+}
+```
 
-cursor:pointer;
+}
 
-width:100%;
+@media (max-width: 600px) {
 
-}
-.course-player{
-display:flex;
-min-height:100vh;
+```
+.nav-container {
+    min-height: 68px;
 }
 
-.course-sidebar{
-width:280px;
-background:#06384D;
-color:white;
-padding:30px;
+.logo strong {
+    font-size: 15px;
 }
 
-.course-sidebar ul{
-list-style:none;
-padding:0;
+.language-select,
+.login-btn {
+    display: none;
 }
 
-.course-sidebar li{
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,0.2);
+.hero {
+    padding: 60px 0;
 }
 
-.course-content{
-flex:1;
-padding:40px;
-background:#f5f9fc;
+.hero h1 {
+    font-size: 48px;
 }
 
-.video-box,
-.pdf-box,
-.lesson-box,
-.progress-box{
-background:white;
-padding:25px;
-margin-bottom:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.hero-description {
+    font-size: 17px;
 }
 
-progress{
-width:100%;
-height:20px;
+.hero-card {
+    padding: 25px;
 }
-/* ======================
-MOBILE RESPONSIVE
-====================== */
-
-@media (max-width:768px){
-
-.header{
-
-flex-direction:column;
-
-text-align:center;
 
+.service-grid {
+    grid-template-columns: 1fr;
 }
 
-nav{
-
-justify-content:center;
-
+.section-heading h2 {
+    font-size: 30px;
 }
-
-.hero h2{
-
-font-size:32px;
 
+.about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
 }
 
-.hero p{
-
-font-size:18px;
-
+.about h2 {
+    font-size: 28px;
 }
 
-.cards{
-
-grid-template-columns:1fr;
+.footer-content {
+    grid-template-columns: 1fr;
+}
 
+.cta h2 {
+    font-size: 34px;
 }
+```
+
 }

@@ -2,99 +2,690 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Login | Midwife Connect Rwanda</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
 
-<title>Login | Midwife Connect Rwanda</title>
+    <style>
 
-<link rel="stylesheet" href="../css/style.css">
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            margin: 0;
+            background: #f8fbfa;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff5f8 0%,
+                    #f4fbfa 50%,
+                    #f7f1ff 100%
+                );
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 1000px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+
+            background: white;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px
+                rgba(50, 70, 70, 0.12);
+        }
+
+
+        /* LEFT SIDE */
+
+        .login-info {
+            padding: 55px 45px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #7e4778,
+                    #9c6196
+                );
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-logo {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .login-info h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            margin: 0 0 18px;
+        }
+
+        .login-info p {
+            line-height: 1.7;
+            font-size: 16px;
+            opacity: 0.92;
+        }
+
+        .login-features {
+            margin-top: 30px;
+        }
+
+        .login-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 17px 0;
+
+            font-size: 15px;
+        }
+
+        .feature-icon {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.16);
+        }
+
+
+        /* FORM */
+
+        .login-form-area {
+            padding: 55px 50px;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            margin: 0 0 8px;
+
+            font-size: 30px;
+
+            color: #263b38;
+        }
+
+        .form-header p {
+            margin: 0;
+
+            color: #70807d;
+        }
+
+
+        .message {
+            display: none;
+
+            padding: 13px 15px;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        .message.error {
+            display: block;
+
+            background: #fff0f0;
+
+            color: #b63232;
+
+            border: 1px solid #f0caca;
+        }
+
+        .message.success {
+            display: block;
+
+            background: #eefaf3;
+
+            color: #247348;
+
+            border: 1px solid #c9e8d5;
+        }
+
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: 600;
+
+            color: #354a47;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border:
+                1px solid #d8e2df;
+
+            border-radius: 11px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #8b4f82;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(139,79,130,0.08);
+        }
+
+
+        /* PASSWORD */
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 50px;
+        }
+
+        .show-password {
+            position: absolute;
+
+            right: 13px;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            border: none;
+
+            background: none;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        /* OPTIONS */
+
+        .login-options {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin: 5px 0 25px;
+
+            font-size: 14px;
+        }
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #657572;
+        }
+
+        .forgot-password {
+            color: #8b4f82;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+
+        /* BUTTON */
+
+        .login-button {
+            width: 100%;
+
+            border: none;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background: #8b4f82;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .login-button:hover {
+            background: #733e6b;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* REGISTER */
+
+        .register-link {
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #697975;
+
+            font-size: 15px;
+        }
+
+        .register-link a {
+            color: #8b4f82;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+
+        /* HOME */
+
+        .home-link {
+            display: block;
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #788784;
+
+            font-size: 14px;
+
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            color: #8b4f82;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .login-wrapper {
+                grid-template-columns: 1fr;
+
+                max-width: 600px;
+            }
+
+            .login-info {
+                padding: 40px 30px;
+            }
+
+            .login-info h1 {
+                font-size: 31px;
+            }
+
+            .login-form-area {
+                padding: 40px 25px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .login-page {
+                padding: 15px 10px;
+            }
+
+            .login-info {
+                padding: 30px 22px;
+            }
+
+            .login-form-area {
+                padding: 30px 20px;
+            }
+
+            .form-header h2 {
+                font-size: 26px;
+            }
+
+            .login-options {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+        }
+
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
 </head>
 
 
 <body>
 
 
-<section class="login-page">
+<div class="login-page">
+
+    <div class="login-wrapper">
 
 
-<div class="login-card">
+        <!-- LEFT INFORMATION -->
+
+        <section class="login-info">
+
+            <div class="login-logo">
+                🤰
+            </div>
+
+            <h1>
+                Welcome Back
+            </h1>
+
+            <p>
+                Sign in to continue learning,
+                exploring reproductive health
+                resources and connecting with
+                the Midwife Connect Rwanda
+                community.
+            </p>
 
 
-<div class="login-logo">
+            <div class="login-features">
 
-<h1>🩺</h1>
+                <div class="login-feature">
 
-<h2>Midwife Connect Rwanda</h2>
+                    <span class="feature-icon">
+                        📚
+                    </span>
 
-<p>Learn • Care • Connect</p>
+                    Continue your lessons
+
+                </div>
+
+
+                <div class="login-feature">
+
+                    <span class="feature-icon">
+                        🧠
+                    </span>
+
+                    Continue your quizzes
+
+                </div>
+
+
+                <div class="login-feature">
+
+                    <span class="feature-icon">
+                        📊
+                    </span>
+
+                    Track your learning progress
+
+                </div>
+
+
+                <div class="login-feature">
+
+                    <span class="feature-icon">
+                        🌍
+                    </span>
+
+                    Access Midwife Connect resources
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <section class="login-form-area">
+
+
+            <div class="form-header">
+
+                <h2>
+                    Login
+                </h2>
+
+                <p>
+                    Enter your account information.
+                </p>
+
+            </div>
+
+
+            <div
+                id="message"
+                class="message">
+            </div>
+
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword()"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- OPTIONS -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot-password"
+                        onclick="forgotPassword(event)"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Login
+                </button>
+
+
+            </form>
+
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <a
+                href="../index.html"
+                class="home-link"
+            >
+                ← Back to Midwife Connect Rwanda
+            </a>
+
+
+        </section>
+
+    </div>
 
 </div>
 
 
 
-<h3>
-Welcome Back
-</h3>
+<script>
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("message");
 
+function togglePassword() {
+  const password = document.getElementById("password");
+  const button = document.querySelector(".show-password");
+  if (!password) return;
+  password.type = password.type === "password" ? "text" : "password";
+  if (button) button.textContent = password.type === "password" ? "👁️" : "🙈";
+}
+function showError(text) { message.textContent = text; message.className = "message error"; }
+function showSuccess(text) { message.textContent = text; message.className = "message success"; }
 
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  if (!email || !password) return showError("Please enter your email and password.");
 
-<input 
-type="email" 
-id="loginEmail"
-placeholder="Email address">
+  const button = loginForm.querySelector('button[type="submit"]');
+  if (button) { button.disabled = true; button.textContent = "Signing in..."; }
 
+  const { data, error } = await mcrSupabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    showError(error.message);
+    if (button) { button.disabled = false; button.textContent = "Login"; }
+    return;
+  }
 
+  const redirect = new URLSearchParams(location.search).get("redirect");
+  showSuccess("Login successful! Redirecting...");
+  setTimeout(() => location.replace(redirect || "dashboard.html"), 400);
+});
 
-<div class="password-box">
-
-<input 
-type="password" 
-id="loginPassword"
-placeholder="Password">
-
-
-<button onclick="showPassword()">
-👁
-</button>
-
-</div>
-
-
-
-
-<button 
-class="main-btn"
-onclick="loginUser()">
-
-Login
-
-</button>
-
-
-
-<p>
-
-Don't have an account?
-
-<a href="register.html">
-Create Account
-</a>
-
-</p>
-
-
-
-</div>
-
-
-</section>
-
-
-
-<script src="../js/auth.js"></script>
+async function forgotPassword(event) {
+  event.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  if (!email) return showError("Enter your email first.");
+  const redirectTo = location.href.replace(/login\.html(?:\?.*)?$/, "reset-password.html");
+  const { error } = await mcrSupabase.auth.resetPasswordForEmail(email, { redirectTo });
+  if (error) showError(error.message);
+  else showSuccess("Password reset instructions have been sent to your email.");
+}
+</script>
 
 
 </body>

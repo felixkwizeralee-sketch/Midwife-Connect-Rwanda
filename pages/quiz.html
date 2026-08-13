@@ -1,203 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Quiz Center</title>
-
+<title>Quiz Center | Midwife Connect Rwanda</title>
 <link rel="stylesheet" href="../css/style.css">
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/auth-guard.js"></script>
+<script src="../js/progress.js"></script>
+<style>
+.quiz-wrap{max-width:1000px;margin:35px auto;padding:20px}.quiz-tabs{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}.quiz-tabs button,.quiz-btn{border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer;background:#f0f5f3;color:#29423d}.quiz-tabs button.active,.quiz-btn{background:#8b4f82;color:#fff}.question{background:#fff;border:1px solid #e1ebe8;border-radius:16px;padding:25px;margin:18px 0}.option{display:block;padding:12px;margin:8px 0;border:1px solid #dce7e4;border-radius:9px;cursor:pointer}.option:hover{background:#f8fbfa}.result{background:#f3faf6;border-radius:16px;padding:25px;margin-top:25px}.hidden{display:none}.bar{height:10px;background:#e5eeeb;border-radius:10px;overflow:hidden}.bar span{display:block;height:100%;background:#8b4f82;width:0}.score{font-size:42px;font-weight:800;color:#8b4f82}
+</style>
 </head>
-
-
 <body>
-
-
-
 <header class="header">
-
-
-<div class="logo">
-
-<h1>Quiz Center 📝</h1>
-
-<p>Midwife Connect Rwanda</p>
-
-</div>
-
-
-<a href="../index.html" class="login-btn">
-
-Home
-
-</a>
-
-
+<div class="logo"><h1>Quiz Center 📝</h1><p>Midwife Connect Rwanda</p></div>
+<a href="dashboard.html" class="login-btn">Dashboard</a>
+<button onclick="logout()" class="logout-btn">Logout 🚪</button>
 </header>
 
-
-
-
-<section class="quiz-dashboard">
-
-
-<h1>
-Test Your Knowledge
-</h1>
-
-
-<p>
-Improve your health and midwifery knowledge through quizzes.
-</p>
-
-
-
-<div class="quiz-cards">
-
-
-
-<div class="quiz-card">
-
-<h2>🎓 Midwifery Quiz</h2>
-
-<p>
-Obstetrics, newborn care, pharmacology and clinical practice.
-</p>
-
-<button>
-Start Quiz
-</button>
-
-</div>
-
-
-
-
-<div class="quiz-card">
-
-<h2>🤰 Pregnancy Quiz</h2>
-
-<p>
-Test your pregnancy and maternal health knowledge.
-</p>
-
-<button>
-Start Quiz
-</button>
-
-</div>
-
-
-
-
-<div class="quiz-card">
-
-<h2>🧑 Youth Health Quiz</h2>
-
-<p>
-Learn about reproductive health and prevention.
-</p>
-
-<button>
-Start Quiz
-</button>
-
-</div>
-
-
-
-</div>
-
-
-
-
-<div class="question-box">
-
-
-<h2>Sample Quiz</h2>
-
-
-<p>
-1. What is the normal duration of human pregnancy?
-</p>
-
-
-
-<label>
-
-<input type="radio" name="answer">
-
-280 days
-
-</label>
-
-
-<br>
-
-
-<label>
-
-<input type="radio" name="answer">
-
-100 days
-
-</label>
-
-
-<br>
-
-
-<label>
-
-<input type="radio" name="answer">
-
-500 days
-
-</label>
-
-
-
-<br><br>
-
-
-<button onclick="checkAnswer()">
-
-Submit Answer
-
-</button>
-
-
-<h3 id="quizResult"></h3>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-<footer>
-
-<p>
-© 2026 Midwife Connect Rwanda
-</p>
-
-</footer>
-
-
-
-<script src="../js/script.js"></script>
-
-
+<main class="quiz-wrap">
+<h1>Test Your Knowledge</h1>
+<p>Choose a quiz, answer every question, and get your score immediately.</p>
+<div class="quiz-tabs" id="quizTabs"></div>
+<div id="quizArea"></div>
+<div id="result" class="result hidden"></div>
+</main>
+
+<script>
+const quizzes={
+  midwifery:[
+    ["What is the first stage of labour?","Latent and active cervical dilatation","Placental delivery","Recovery","Fetal expulsion",0],
+    ["Which finding is most concerning during labour?","Normal bloody show","Progressive cervical dilation","Persistent fetal bradycardia","Mild maternal discomfort",2],
+    ["The main purpose of antenatal care is to:","Identify and manage risks and promote maternal-fetal health","Guarantee a caesarean birth","Replace all laboratory tests","Prevent every pregnancy complication",0],
+    ["Colostrum is particularly rich in:","Antibodies","Alcohol","Caffeine","Sodium chloride only",0],
+    ["After delivery, uterine massage is primarily used when there is concern for:","Uterine atony and postpartum bleeding","Normal fetal movement","Morning sickness","Hyperemesis",0]
+  ],
+  pregnancy:[
+    ["A normal term pregnancy is approximately:","180 days","220 days","280 days","365 days",2],
+    ["The first day of the menstrual period is used to calculate:","LMP","Apgar score","BMI","Blood group",0],
+    ["Which is a danger sign in pregnancy?","Severe vaginal bleeding","Mild fetal movement","Normal appetite","Occasional fatigue",0],
+    ["Folic acid is especially important before and early in pregnancy because it helps reduce:","Neural tube defects","Broken bones","Tooth decay only","Common colds",0],
+    ["A fetal heart rate assessment is part of monitoring:","Fetal wellbeing","Maternal height only","Household income","Eye colour",0]
+  ],
+  youth:[
+    ["A reliable way to prevent sexually transmitted infections is:","Condom use","Sharing needles","Ignoring symptoms","Sharing antibiotics",0],
+    ["Consent in sexual relationships should be:","Freely given and reversible","Assumed from silence","Forced","Permanent after one yes",0],
+    ["A person with symptoms of an STI should:","Seek appropriate testing and treatment","Hide the symptoms","Share medication randomly","Wait indefinitely",0],
+    ["Confidential health services help young people:","Seek care safely and appropriately","Avoid all healthcare","Diagnose themselves only","Replace professional advice",0],
+    ["Emergency contraception is intended to:","Reduce pregnancy risk after unprotected sex","Treat an STI","End every established pregnancy","Prevent HIV infection",0]
+  ]
+};
+let current="midwifery", answers=[], submitted=false;
+
+function renderTabs(){
+ document.getElementById("quizTabs").innerHTML=Object.keys(quizzes).map(k=>
+ `<button class="${k===current?'active':''}" onclick="startQuiz('${k}')">${k==='midwifery'?'🎓 Midwifery':k==='pregnancy'?'🤰 Pregnancy':'🧑 Youth Health'}</button>`).join("");
+}
+function startQuiz(type){
+ current=type; answers=[]; submitted=false; document.getElementById("result").className="result hidden";
+ renderTabs();
+ const qs=quizzes[type];
+ document.getElementById("quizArea").innerHTML=`
+ <div class="bar"><span id="quizBar"></span></div>
+ <p id="progressText">0 / ${qs.length} answered</p>
+ ${qs.map((q,i)=>`<section class="question"><h2>${i+1}. ${q[0]}</h2>
+ ${q.slice(1,5).map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" onchange="choose(${i},${j})"> ${o}</label>`).join("")}</section>`).join("")}
+ <button class="quiz-btn" onclick="submitQuiz()">Submit Quiz</button>`;
+}
+function choose(i,j){answers[i]=j;const total=quizzes[current].length;const n=answers.filter(x=>x!==undefined).length;document.getElementById("progressText").textContent=`${n} / ${total} answered`;document.getElementById("quizBar").style.width=(n/total*100)+"%";}
+async function submitQuiz(){
+ const qs=quizzes[current];
+ if(answers.filter(x=>x!==undefined).length<qs.length){alert("Please answer every question before submitting.");return;}
+ let score=0; qs.forEach((q,i)=>{if(answers[i]===q[5])score++;});
+ const percent=Math.round(score/qs.length*100);
+ const key="quiz_"+current+"_best";
+ const best=Math.max(Number(localStorage.getItem(key)||0),percent);
+ localStorage.setItem(key,best);
+ if(window.MCRProgress) MCRProgress.complete(key);
+ if(window.mcrSupabase) {
+   const {data:userData}=await window.mcrSupabase.auth.getUser();
+   const uid=userData?.user?.id;
+   if(uid) await window.mcrSupabase.from("quiz_results").insert({
+     user_id:uid, quiz_slug:current, score:percent,
+     correct_answers:score, total_questions:qs.length
+   });
+ }
+ const result=document.getElementById("result");
+ result.className="result";
+ result.innerHTML=`<div class="score">${percent}%</div><h2>${score} / ${qs.length} correct</h2>
+ <p>${percent>=80?"Excellent work! 🎉":percent>=60?"Good progress. Review the missed topics and try again.":"Keep studying and try the quiz again."}</p>
+ <p><strong>Best score:</strong> ${best}%</p>
+ <button class="quiz-btn" onclick="startQuiz('${current}')">Try Again</button>
+ <a class="quiz-btn" href="dashboard.html" style="display:inline-block;text-decoration:none;margin-left:8px">Back to Dashboard</a>`;
+ window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+}
+startQuiz("midwifery");
+</script>
 </body>
-
 </html>

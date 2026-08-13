@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 14: Breast Anatomy & Lactation | Midwife Connect Rwanda</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+<script src="../js/progress.js"></script>
+
+    <style>
+
+        .lesson-hero {
+            background: linear-gradient(135deg, #fff4f8, #fffafd);
+            padding: 60px 0;
+        }
+
+        .lesson-breadcrumb {
+            color: #c34d7d;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lesson-hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.1;
+            max-width: 900px;
+        }
+
+        .lesson-hero h1 span {
+            color: #c34d7d;
+        }
+
+        .lesson-hero p {
+            max-width: 800px;
+            margin-top: 20px;
+            color: #5e716e;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .lesson-container {
+            max-width: 950px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .lesson-content h2 {
+            font-size: 32px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+        }
+
+        .lesson-content h3 {
+            font-size: 22px;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .lesson-content p {
+            color: #526663;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .objectives {
+            background: #fff3f7;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 40px;
+        }
+
+        .objectives ul {
+            padding-left: 25px;
+            margin-top: 15px;
+        }
+
+        .objectives li {
+            margin-bottom: 10px;
+            color: #526663;
+        }
+
+        .definition-box {
+            background: #fff5f8;
+            border-left: 5px solid #c34d7d;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .definition-box strong {
+            color: #c34d7d;
+        }
+
+        .organ-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .organ-card {
+            padding: 25px;
+            border: 1px solid #eadce2;
+            border-radius: 16px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .organ-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(120, 40, 70, 0.08);
+        }
+
+        .organ-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .organ-card h3 {
+            margin-top: 0;
+        }
+
+        .organ-card p {
+            font-size: 15px;
+        }
+
+        .hormone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .hormone-card {
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #eadce2;
+            background: #fffafd;
+        }
+
+        .hormone-card h3 {
+            margin-top: 0;
+        }
+
+        .prolactin {
+            border-left: 5px solid #c34d7d;
+        }
+
+        .oxytocin {
+            border-left: 5px solid #8c63b8;
+        }
+
+        .clinical-box {
+            background: #fff9e8;
+            border-left: 5px solid #e2aa00;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .clinical-box strong {
+            color: #8b6900;
+        }
+
+        .info-box {
+            background: #edf7ff;
+            border-left: 5px solid #3185c7;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .info-box strong {
+            color: #17649a;
+        }
+
+        .danger-box {
+            background: #fff1f1;
+            border-left: 5px solid #d84b4b;
+            padding: 28px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .danger-box strong {
+            color: #b52d2d;
+        }
+
+        .flow-box {
+            background: #fffdfd;
+            border: 1px solid #eadce2;
+            border-radius: 18px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 18px;
+            line-height: 2.2;
+        }
+
+        .milk-box {
+            background: #fff8fb;
+            border: 1px solid #eadce2;
+            border-radius: 18px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .milk-item {
+            background: white;
+            padding: 18px;
+            margin: 12px 0;
+            border-radius: 12px;
+            border-left: 4px solid #c34d7d;
+        }
+
+        .milk-item strong {
+            color: #c34d7d;
+        }
+
+        .steps {
+            counter-reset: step;
+            margin: 30px 0;
+        }
+
+        .step {
+            counter-increment: step;
+            padding: 22px 22px 22px 65px;
+            margin: 15px 0;
+            background: #fffafd;
+            border: 1px solid #eadce2;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .step::before {
+            content: counter(step);
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #c34d7d;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .memory-box {
+            background: #fff3f7;
+            padding: 28px;
+            border-radius: 18px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .memory-box strong {
+            color: #c34d7d;
+            font-size: 20px;
+        }
+
+        .review {
+            margin-top: 50px;
+            padding: 30px;
+            background: #fffdfd;
+            border: 1px solid #eadce2;
+            border-radius: 18px;
+        }
+
+        .question {
+            margin: 22px 0;
+        }
+
+        .answer {
+            margin-top: 7px;
+            padding-left: 15px;
+            border-left: 3px solid #eadce2;
+            color: #657572;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e1ecea;
+        }
+
+        @media (max-width: 750px) {
+
+            .organ-grid,
+            .hormone-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .lesson-navigation {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">🤰</span>
+
+            <span>
+                <strong>Midwife Connect</strong>
+                <small>Rwanda</small>
+            </span>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+
+            <a href="student.html">Students</a>
+
+            <a href="midwife.html">Midwives</a>
+
+            <a href="pregnancy.html">Pregnancy</a>
+
+            <a href="youth.html">Youth</a>
+
+            <a href="quiz.html">Quiz</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <select class="language-select">
+
+                <option>English</option>
+                <option>Kinyarwanda</option>
+                <option>Français</option>
+                <option>Kiswahili</option>
+
+            </select>
+
+
+            <a href="#" class="login-btn">
+                Login
+            </a>
+
+
+            <button class="menu-btn">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<section class="lesson-hero">
+
+    <div class="container">
+
+        <div class="lesson-breadcrumb">
+            Anatomy & Physiology → Lesson 14
+        </div>
+
+        <h1>
+            Breast Anatomy & <span>Lactation</span>
+        </h1>
+
+        <p>
+            Understand breast anatomy, milk production, hormonal
+            control of lactation, breastfeeding physiology,
+            colostrum, milk ejection and essential midwifery care.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="lesson-container">
+
+    <article class="lesson-content">
+
+
+        <!-- OBJECTIVES -->
+
+        <div class="objectives">
+
+            <h2>
+                🎯 Learning Objectives
+            </h2>
+
+            <p>
+                By the end of this lesson, you should be able to:
+            </p>
+
+            <ul>
+
+                <li>
+                    Describe the basic anatomy of the breast.
+                </li>
+
+                <li>
+                    Explain the function of the mammary glands.
+                </li>
+
+                <li>
+                    Describe the process of milk production.
+                </li>
+
+                <li>
+                    Explain the roles of prolactin and oxytocin.
+                </li>
+
+                <li>
+                    Distinguish colostrum, transitional milk and
+                    mature breast milk.
+                </li>
+
+                <li>
+                    Explain the milk ejection reflex.
+                </li>
+
+                <li>
+                    Describe basic principles of effective
+                    breastfeeding.
+                </li>
+
+                <li>
+                    Recognize common breastfeeding difficulties
+                    and warning signs.
+                </li>
+
+                <li>
+                    Explain the role of the midwife in breastfeeding
+                    support.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- INTRODUCTION -->
+
+        <h2>
+            1. What is Lactation?
+        </h2>
+
+        <p>
+            Lactation is the physiological process of producing and
+            secreting breast milk after childbirth.
+        </p>
+
+
+        <div class="definition-box">
+
+            <strong>
+                Simple definition:
+            </strong>
+
+            <p>
+                Lactation is the production and release of breast milk
+                from the mammary glands to nourish the newborn.
+            </p>
+
+        </div>
+
+
+
+        <!-- ANATOMY -->
+
+        <h2>
+            2. Breast Anatomy
+        </h2>
+
+        <p>
+            The breast contains glandular tissue, ducts, connective
+            tissue and adipose tissue. The mammary gland is specialized
+            for milk production.
+        </p>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Mammary Glands
+                </h3>
+
+                <p>
+                    Specialized glandular tissue responsible for
+                    producing breast milk.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🫧
+                </div>
+
+                <h3>
+                    Alveoli
+                </h3>
+
+                <p>
+                    Small milk-producing structures lined by secretory
+                    cells. Milk is produced within the alveolar units.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    ➡️
+                </div>
+
+                <h3>
+                    Lactiferous Ducts
+                </h3>
+
+                <p>
+                    Ducts that transport milk from the glandular
+                    tissue toward the nipple.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Nipple
+                </h3>
+
+                <p>
+                    The nipple contains openings through which breast
+                    milk is delivered to the infant.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🟤
+                </div>
+
+                <h3>
+                    Areola
+                </h3>
+
+                <p>
+                    The pigmented area surrounding the nipple. It
+                    contains glands that help maintain the skin and
+                    contribute to nipple preparation during breastfeeding.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🧈
+                </div>
+
+                <h3>
+                    Adipose Tissue
+                </h3>
+
+                <p>
+                    Fatty tissue contributes to the size and shape
+                    of the breast and surrounds glandular structures.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MILK PRODUCTION -->
+
+        <h2>
+            3. How Breast Milk is Produced
+        </h2>
+
+        <p>
+            Milk production is regulated by hormonal changes and
+            stimulation of the breast by the infant.
+        </p>
+
+
+        <div class="flow-box">
+
+            <strong>
+                Baby suckles
+            </strong>
+
+            →
+
+            <strong>
+                Nipple stimulation
+            </strong>
+
+            →
+
+            <strong>
+                Hormonal response
+            </strong>
+
+            →
+
+            <strong>
+                Milk production & ejection
+            </strong>
+
+        </div>
+
+
+
+        <!-- HORMONES -->
+
+        <h2>
+            4. Hormonal Control of Lactation
+        </h2>
+
+
+        <div class="hormone-grid">
+
+
+            <div class="hormone-card prolactin">
+
+                <h3>
+                    🧪 Prolactin
+                </h3>
+
+                <p>
+                    Prolactin stimulates the mammary glands to produce
+                    breast milk.
+                </p>
+
+                <p>
+                    Frequent and effective breast stimulation helps
+                    maintain milk production.
+                </p>
+
+            </div>
+
+
+            <div class="hormone-card oxytocin">
+
+                <h3>
+                    💗 Oxytocin
+                </h3>
+
+                <p>
+                    Oxytocin causes contraction of myoepithelial cells
+                    around the alveoli, helping milk move toward the
+                    ducts and nipple.
+                </p>
+
+                <p>
+                    This is known as the milk ejection or let-down reflex.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="info-box">
+
+            <strong>
+                🧠 Remember
+            </strong>
+
+            <p>
+                <strong>Prolactin = milk production.</strong>
+                <br>
+                <strong>Oxytocin = milk ejection.</strong>
+            </p>
+
+        </div>
+
+
+
+        <!-- LET DOWN -->
+
+        <h2>
+            5. Milk Ejection Reflex
+        </h2>
+
+        <p>
+            When the baby suckles, sensory receptors around the nipple
+            are stimulated. This stimulates oxytocin release from the
+            posterior pituitary.
+        </p>
+
+
+        <div class="flow-box">
+
+            <strong>
+                Suckling
+            </strong>
+
+            →
+
+            <strong>
+                Nipple stimulation
+            </strong>
+
+            →
+
+            <strong>
+                Oxytocin release
+            </strong>
+
+            →
+
+            <strong>
+                Alveolar contraction
+            </strong>
+
+            →
+
+            <strong>
+                Milk ejection
+            </strong>
+
+        </div>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🩺 Midwifery connection
+            </strong>
+
+            <p>
+                Stress, pain, fear and anxiety can interfere with the
+                mother's breastfeeding experience and may affect
+                milk ejection. Emotional support and a calm environment
+                can be helpful.
+            </p>
+
+        </div>
+
+
+
+        <!-- COLOSTRUM -->
+
+        <h2>
+            6. Colostrum
+        </h2>
+
+        <p>
+            Colostrum is the first breast milk produced during the
+            early days after birth.
+        </p>
+
+
+        <div class="milk-box">
+
+
+            <div class="milk-item">
+
+                <strong>
+                    🟡 Appearance
+                </strong>
+
+                <p>
+                    Colostrum is often yellowish or golden in appearance.
+                </p>
+
+            </div>
+
+
+            <div class="milk-item">
+
+                <strong>
+                    🛡️ Immune Protection
+                </strong>
+
+                <p>
+                    It contains important immune components that help
+                    protect the newborn.
+                </p>
+
+            </div>
+
+
+            <div class="milk-item">
+
+                <strong>
+                    💪 Nutritional Value
+                </strong>
+
+                <p>
+                    It provides concentrated nutrients and bioactive
+                    substances appropriate for the newborn.
+                </p>
+
+            </div>
+
+
+            <div class="milk-item">
+
+                <strong>
+                    👶 Small Amounts
+                </strong>
+
+                <p>
+                    It is produced in relatively small quantities,
+                    which are generally appropriate for the newborn's
+                    early stomach capacity.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TYPES OF MILK -->
+
+        <h2>
+            7. Types of Breast Milk
+        </h2>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🟡 Colostrum
+                </h3>
+
+                <p>
+                    Early milk produced after birth. It is rich in
+                    protective factors and nutrients.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🌱 Transitional Milk
+                </h3>
+
+                <p>
+                    Milk produced during the transition from colostrum
+                    toward mature breast milk.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🥛 Mature Milk
+                </h3>
+
+                <p>
+                    Established breast milk that provides energy,
+                    nutrients, fluid and bioactive components for the
+                    growing infant.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOREMILK HINDMILK -->
+
+        <h2>
+            8. Changes During a Breastfeed
+        </h2>
+
+        <p>
+            Milk composition changes during a feeding. The terms
+            "foremilk" and "hindmilk" are commonly used to describe
+            milk at different stages of a feed, but breast milk is
+            continuously changing rather than being two completely
+            separate types.
+        </p>
+
+
+        <div class="info-box">
+
+            <strong>
+                💡 Practical point
+            </strong>
+
+            <p>
+                Allowing the infant to feed effectively and adequately
+                from the breast helps the infant receive the available
+                milk and supports effective milk removal.
+            </p>
+
+        </div>
+
+
+
+        <!-- BREASTFEEDING INITIATION -->
+
+        <h2>
+            9. Initiating Breastfeeding
+        </h2>
+
+        <p>
+            Early support after birth can help establish effective
+            breastfeeding.
+        </p>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <strong>
+                    Skin-to-skin contact
+                </strong>
+
+                <p>
+                    When clinically appropriate, place the newborn
+                    skin-to-skin with the mother soon after birth.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Early breastfeeding
+                </strong>
+
+                <p>
+                    Support breastfeeding as soon as the mother and
+                    baby are ready and clinically stable.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Correct positioning
+                </strong>
+
+                <p>
+                    Help the mother position the baby close to her
+                    body with the baby's head and body aligned.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Effective attachment
+                </strong>
+
+                <p>
+                    Observe the baby's attachment and sucking and
+                    correct problems early.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Frequent feeding
+                </strong>
+
+                <p>
+                    Encourage responsive feeding and avoid unnecessary
+                    restrictions on breastfeeding frequency.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- POSITIONING -->
+
+        <h2>
+            10. Breastfeeding Positioning
+        </h2>
+
+        <p>
+            Good positioning helps the infant attach effectively and
+            can reduce nipple pain and improve milk transfer.
+        </p>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👶 Baby Close to Mother
+                </h3>
+
+                <p>
+                    The baby's body should be close to the mother
+                    rather than reaching toward the breast.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👂 Head and Body Aligned
+                </h3>
+
+                <p>
+                    The baby's head, neck and body should be comfortably
+                    aligned.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👄 Wide Mouth
+                </h3>
+
+                <p>
+                    Encourage a wide mouth before bringing the baby
+                    onto the breast.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🤱 Deep Attachment
+                </h3>
+
+                <p>
+                    The baby should take a substantial portion of the
+                    breast into the mouth, not just the nipple.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SIGNS OF EFFECTIVE FEEDING -->
+
+        <h2>
+            11. Signs of Effective Breastfeeding
+        </h2>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👄 Good Attachment
+                </h3>
+
+                <p>
+                    The infant appears well attached and suckling is
+                    effective.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    😊 Comfortable Mother
+                </h3>
+
+                <p>
+                    Breastfeeding should not cause persistent severe
+                    nipple pain when attachment is effective.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👂 Swallowing
+                </h3>
+
+                <p>
+                    Swallowing can be observed or heard during effective
+                    milk transfer.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    👶 Satisfied Infant
+                </h3>
+
+                <p>
+                    The baby may appear satisfied after an effective feed,
+                    although feeding behavior varies between newborns.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EXCLUSIVE -->
+
+        <h2>
+            12. Exclusive Breastfeeding
+        </h2>
+
+        <p>
+            Exclusive breastfeeding means giving an infant only breast
+            milk, except for medicines, vitamins, minerals or oral
+            rehydration solution when medically indicated.
+        </p>
+
+
+        <div class="clinical-box">
+
+            <strong>
+                🍼 Key recommendation
+            </strong>
+
+            <p>
+                WHO recommends exclusive breastfeeding for the first
+                6 months of life when possible and appropriate, followed
+                by continued breastfeeding with complementary foods.
+            </p>
+
+        </div>
+
+
+
+        <!-- BENEFITS -->
+
+        <h2>
+            13. Benefits of Breastfeeding
+        </h2>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    👶
+                </div>
+
+                <h3>
+                    Benefits for the Baby
+                </h3>
+
+                <p>
+                    Breast milk provides nutrients, immune protection
+                    and bioactive components important for infant health
+                    and development.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🤱
+                </div>
+
+                <h3>
+                    Benefits for the Mother
+                </h3>
+
+                <p>
+                    Breastfeeding supports postpartum physiological
+                    processes and provides important maternal and
+                    emotional benefits.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Family Benefits
+                </h3>
+
+                <p>
+                    Breastfeeding is readily available and can reduce
+                    the cost and preparation required for infant feeding.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <div class="organ-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Bonding
+                </h3>
+
+                <p>
+                    Close contact during breastfeeding can support
+                    bonding and responsive interaction between mother
+                    and baby.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COMMON PROBLEMS -->
+
+        <h2>
+            14. Common Breastfeeding Problems
+        </h2>
+
+
+        <div class="organ-grid">
+
+
+            <div class="organ-card">
+
+                <h3>
+                    😣 Nipple Pain
+                </h3>
+
+                <p>
+                    Often associated with poor positioning or attachment.
+                    The mother should be assessed and supported.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🩷 Engorgement
+                </h3>
+
+                <p>
+                    Breasts may become swollen, firm and uncomfortable.
+                    Effective milk removal and appropriate support are
+                    important.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    🔴 Mastitis
+                </h3>
+
+                <p>
+                    Breast inflammation may cause pain, redness,
+                    swelling and sometimes fever. Clinical assessment
+                    may be required.
+                </p>
+
+            </div>
+
+
+            <div class="organ-card">
+
+                <h3>
+                    💧 Perceived Low Milk Supply
+                </h3>
+
+                <p>
+                    Assessment should consider feeding frequency,
+                    attachment, milk transfer, infant output and growth
+                    rather than assuming insufficient milk.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MIDWIFERY -->
+
+        <h2>
+            15. Role of the Midwife
+        </h2>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <strong>
+                    Assess breastfeeding
+                </strong>
+
+                <p>
+                    Observe positioning, attachment, sucking and
+                    maternal comfort.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Provide education
+                </strong>
+
+                <p>
+                    Explain breastfeeding physiology and answer the
+                    mother's questions.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Correct problems
+                </strong>
+
+                <p>
+                    Help improve positioning and attachment when needed.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Support confidence
+                </strong>
+
+                <p>
+                    Provide respectful, supportive and non-judgmental
+                    care.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    Refer when necessary
+                </strong>
+
+                <p>
+                    Identify problems that require additional clinical
+                    assessment or specialist support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WARNING SIGNS -->
+
+        <h2>
+            16. Breastfeeding Warning Signs
+        </h2>
+
+        <p>
+            Some maternal or newborn conditions require prompt
+            assessment.
+        </p>
+
+
+        <ul>
+
+            <li>
+                Severe or worsening breast pain.
+            </li>
+
+            <li>
+                Significant breast redness or swelling with fever.
+            </li>
+
+            <li>
+                Persistent nipple injury or bleeding.
+            </li>
+
+            <li>
+                Newborn difficulty feeding or repeatedly refusing feeds.
+            </li>
+
+            <li>
+                Signs of dehydration or inadequate intake in the newborn.
+            </li>
+
+            <li>
+                Poor newborn weight gain requiring assessment.
+            </li>
+
+            <li>
+                Maternal illness or medication concerns affecting
+                breastfeeding.
+            </li>
+
+        </ul>
+
+
+        <div class="danger-box">
+
+            <strong>
+                ⚠️ Clinical warning
+            </strong>
+
+            <p>
+                Breastfeeding problems should be assessed individually.
+                Do not advise a mother to stop breastfeeding routinely
+                without identifying the clinical reason and considering
+                appropriate alternatives.
+            </p>
+
+        </div>
+
+
+
+        <!-- SUMMARY -->
+
+        <h2>
+            17. Summary
+        </h2>
+
+
+        <div class="memory-box">
+
+            <strong>
+                🧠 Remember
+            </strong>
+
+            <p>
+                The mammary glands produce breast milk.
+            </p>
+
+            <p>
+                Alveoli are important milk-producing structures.
+            </p>
+
+            <p>
+                Lactiferous ducts transport milk toward the nipple.
+            </p>
+
+            <p>
+                Prolactin is primarily associated with milk production.
+            </p>
+
+            <p>
+                Oxytocin is primarily associated with milk ejection.
+            </p>
+
+            <p>
+                Colostrum is the first milk produced after birth.
+            </p>
+
+            <p>
+                Good positioning and attachment support effective
+                breastfeeding.
+            </p>
+
+            <p>
+                Exclusive breastfeeding is recommended for the first
+                6 months when possible and appropriate.
+            </p>
+
+            <p>
+                Midwives play an important role in breastfeeding
+                education, assessment and support.
+            </p>
+
+        </div>
+
+
+
+        <!-- REVIEW -->
+
+        <div class="review">
+
+            <h2>
+                🧠 Quick Review
+            </h2>
+
+
+            <div class="question">
+
+                <strong>
+                    1. What is lactation?
+                </strong>
+
+                <div class="answer">
+                    Lactation is the production and secretion of breast
+                    milk by the mammary glands.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    2. What are the milk-producing structures of the breast?
+                </strong>
+
+                <div class="answer">
+                    The alveoli are important milk-producing structures.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    3. What is the role of prolactin?
+                </strong>
+
+                <div class="answer">
+                    Prolactin stimulates breast milk production.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    4. What is the role of oxytocin?
+                </strong>
+
+                <div class="answer">
+                    Oxytocin causes contraction of myoepithelial cells,
+                    helping eject milk toward the nipple.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    5. What is colostrum?
+                </strong>
+
+                <div class="answer">
+                    Colostrum is the first breast milk produced during
+                    the early days after birth.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    6. What is exclusive breastfeeding?
+                </strong>
+
+                <div class="answer">
+                    Feeding the infant only breast milk, with specified
+                    medical exceptions such as medicines or oral
+                    rehydration solution when indicated.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    7. What can cause nipple pain during breastfeeding?
+                </strong>
+
+                <div class="answer">
+                    Poor positioning or ineffective attachment is a
+                    common cause and should be assessed.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    8. Name two responsibilities of a midwife in
+                    breastfeeding support.
+                </strong>
+
+                <div class="answer">
+                    Examples include assessing attachment, providing
+                    breastfeeding education, correcting positioning
+                    problems and identifying cases requiring referral.
+                </div>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    9. For how long does WHO recommend exclusive
+                    breastfeeding?
+                </strong>
+
+                <div class="answer">
+                    For the first 6 months of life when possible and
+                    appropriate.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <div class="lesson-navigation">
+
+            <a href="lesson-pregnancy-fetal-development.html"
+               class="secondary-btn">
+
+                ← Previous Lesson
+
+            </a>
+
+
+            <a href="#"
+               class="primary-btn">
+
+                Next Lesson →
+
+            </a>
+
+        </div>
+
+
+    </article>
+
+</main>
+
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+
+        <div>
+
+            <h3>
+                🤰 Midwife Connect Rwanda
+            </h3>
+
+            <p>
+                Learn • Care • Connect
+            </p>
+
+            <p>
+                Reproductive health and midwifery education
+                for Rwanda and beyond.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="student.html">
+                Students
+            </a>
+
+            <a href="pregnancy.html">
+                Pregnancy
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="midwife.html">
+                Midwives
+            </a>
+
+            <a href="youth.html">
+                Youth
+            </a>
+
+            <a href="quiz.html">
+                Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Midwife Connect Rwanda.
+            Founded by Kwizera Felix.
+        </p>
+
+        <p>
+            Educational information only — not a replacement
+            for professional medical care.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<div id="mcr-complete" style="max-width:900px;margin:25px auto;padding:18px;background:#fff;border:1px solid #e2ebe8;border-radius:14px">
+<button type="button" id="completeLesson" style="padding:11px 16px;border:0;border-radius:9px;background:#8b4f82;color:#fff;font-weight:700">Mark lesson complete ✓</button>
+<span id="progressStatus" style="margin-left:12px;color:#5d6d69"></span>
+</div>
+<script>
+(function(){
+ const slug="lesson-breast-anatomy-lactation";
+ const btn=document.getElementById("completeLesson"), status=document.getElementById("progressStatus");
+ function refresh(){if(MCRProgress.isComplete(slug)){btn.textContent="Lesson completed ✓";status.textContent="Saved on this device";btn.disabled=true;}}
+ btn.addEventListener("click",()=>{MCRProgress.complete(slug);refresh();});
+ refresh();
+})();
+</script>
+
+</body>
+
+</html>

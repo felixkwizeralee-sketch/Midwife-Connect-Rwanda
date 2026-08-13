@@ -1,0 +1,14 @@
+{
+  "primary": "Midwife-Connect-Rwanda",
+  "secondary": "old midwife connect rwanda",
+  "strategy": "Newer project retained as primary; unique older files merged without overwriting newer files.",
+  "reference_repairs": {
+    "students.html": "student.html",
+    "midwives.html": "midwife.html",
+    "family-planning.html": "pregnancy.html"
+  },
+  "unique_old_files_added": [
+    "index.html",
+    "README.md"
+  ]
+}
