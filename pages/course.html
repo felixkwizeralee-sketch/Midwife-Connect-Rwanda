@@ -1,21 +1,93 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Course Player | Midwife Connect Rwanda</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Player</title>
 <link rel="stylesheet" href="../css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase.js"></script><script src="../js/auth-guard.js"></script><script src="../js/progress.js"></script>
-<style>.player{max-width:1150px;margin:30px auto;padding:20px}.modules{display:grid;grid-template-columns:280px 1fr;gap:25px}.side,.content{background:#fff;border:1px solid #e0ebe9;border-radius:16px;padding:22px}.side a{display:block;padding:10px;border-radius:8px;text-decoration:none;color:#29423d}.side a:hover{background:#f3f7f6}.content h2{font-size:34px}.next{display:inline-block;margin-top:20px;padding:12px 18px;background:#8b4f82;color:#fff;border-radius:9px;text-decoration:none;font-weight:700}@media(max-width:800px){.modules{grid-template-columns:1fr}}</style>
 </head>
+
 <body>
-<header class="header"><div class="logo"><h1>Midwife Connect Rwanda</h1><p>Course Learning Center</p></div><a href="dashboard.html" class="login-btn">← Dashboard</a></header>
-<main class="player"><h1>Anatomy & Physiology Learning Path</h1>
-<div class="modules"><aside class="side" id="side"></aside><section class="content" id="content"></section></div></main>
-<script>
-const lessons=[
-["Introduction","lesson-anatomy-introduction.html"],["Anatomical Position","lesson-anatomical-position.html"],["Levels of Organization","lesson-anatomy-levels.html"],["Skeletal System","lesson-skeletal-system.html"],["Muscular System","lesson-muscular-system.html"],["Nervous System","lesson-nervous-system.html"],["Cardiovascular System","lesson-cardiovascular-system.html"],["Respiratory System","lesson-respiratory-system.html"],["Digestive System","lesson-digestive-system.html"],["Urinary System","lesson-urinary-system.html"],["Reproductive System","lesson-reproductive-system.html"],["Breast Anatomy & Lactation","lesson-breast-anatomy-lactation.html"],["Endocrine System","lesson-endocrine-system.html"],["Reproductive Hormones & Menstrual Cycle","lesson-reproductive-hormones-menstrual-cycle.html"],["Fertilization & Embryonic Development","lesson-fertilization-implantation-embryonic-development.html"],["Pregnancy & Fetal Development","lesson-pregnancy-fetal-development.html"]
-];
-document.getElementById("side").innerHTML="<h2>📚 Lessons</h2>"+lessons.map((x,i)=>`<a href="#${i}" onclick="show(${i});return false">${MCRProgress.isComplete(x[1].replace('.html',''))?'✅':'○'} ${i+1}. ${x[0]}</a>`).join("");
-function show(i){const x=lessons[i];document.getElementById("content").innerHTML=`<p class="muted">Lesson ${i+1} of ${lessons.length}</p><h2>${x[0]}</h2><p>Open the complete lesson and mark it complete when finished.</p><a class="next" href="${x[1]}">Start Lesson →</a>${i<lessons.length-1?`<a class="next" style="margin-left:8px;background:#f0f5f3;color:#29423d" href="#${i+1}" onclick="show(${i+1});return false">Next Module</a>`:""}`;}
-show(0);
-</script>
-</body></html>
+
+<header class="header">
+<div class="logo">
+<h1>Midwife Connect Rwanda</h1>
+<p>Course Learning Center</p>
+</div>
+
+<a href="student.html" class="login-btn">← Back</a>
+</header>
+
+<section class="course-player">
+
+<div class="course-sidebar">
+
+<h2>📚 Course Modules</h2>
+
+<ul>
+<li>✅ Introduction</li>
+<li>▶ Anatomy & Physiology</li>
+<li>▶ Antenatal Care (ANC)</li>
+<li>▶ Labour & Delivery</li>
+<li>▶ Postpartum Care</li>
+<li>▶ Newborn Care</li>
+<li>▶ Family Planning</li>
+<li>▶ Emergency Obstetric Care</li>
+<li>▶ Quiz</li>
+<li>🏆 Certificate</li>
+</ul>
+
+</div>
+
+<div class="course-content">
+
+<h2>Antenatal Care (ANC)</h2>
+
+<div class="video-box">
+
+<h3>🎥 Video Lesson</h3>
+
+<p>Video will appear here when connected to your files or YouTube.</p>
+
+</div>
+
+<div class="pdf-box">
+
+<h3>📄 Course Notes</h3>
+
+<p>Download ANC guideline.pdf</p>
+
+<button>Download PDF</button>
+
+</div>
+
+<div class="lesson-box">
+
+<h3>Lesson Summary</h3>
+
+<p>
+Antenatal care helps protect the health of the mother and baby by identifying risks early, promoting healthy pregnancy practices, and preparing families for birth.
+</p>
+
+</div>
+
+<div class="progress-box">
+
+<h3>Course Progress</h3>
+
+<progress value="20" max="100"></progress>
+
+<p>20% Completed</p>
+
+</div>
+
+<button class="main-btn">
+Next Lesson →
+</button>
+
+</div>
+
+</section>
+
+</body>
+</html>

@@ -14,7 +14,6 @@
     </title>
 
     <link rel="stylesheet" href="../css/style.css">
-<script src="../js/progress.js"></script>
 
     <style>
 
@@ -257,9 +256,9 @@
 
             <a href="../index.html">Home</a>
 
-            <a href="student.html">Students</a>
+            <a href="students.html">Students</a>
 
-            <a href="midwife.html">Midwives</a>
+            <a href="midwives.html">Midwives</a>
 
             <a href="pregnancy.html">Pregnancy</a>
 
@@ -969,7 +968,7 @@
                 Home
             </a>
 
-            <a href="student.html">
+            <a href="students.html">
                 Students
             </a>
 
@@ -990,7 +989,7 @@
                 Resources
             </h4>
 
-            <a href="midwife.html">
+            <a href="midwives.html">
                 Midwives
             </a>
 
@@ -1023,21 +1022,6 @@
 
 </footer>
 
-
-
-<div id="mcr-complete" style="max-width:900px;margin:25px auto;padding:18px;background:#fff;border:1px solid #e2ebe8;border-radius:14px">
-<button type="button" id="completeLesson" style="padding:11px 16px;border:0;border-radius:9px;background:#8b4f82;color:#fff;font-weight:700">Mark lesson complete ✓</button>
-<span id="progressStatus" style="margin-left:12px;color:#5d6d69"></span>
-</div>
-<script>
-(function(){
- const slug="lesson-anatomical-position";
- const btn=document.getElementById("completeLesson"), status=document.getElementById("progressStatus");
- function refresh(){if(MCRProgress.isComplete(slug)){btn.textContent="Lesson completed ✓";status.textContent="Saved on this device";btn.disabled=true;}}
- btn.addEventListener("click",()=>{MCRProgress.complete(slug);refresh();});
- refresh();
-})();
-</script>
 
 </body>
 

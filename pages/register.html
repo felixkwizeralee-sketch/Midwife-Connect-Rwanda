@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/supabase.js"></script>
 
     <title>Create Account | Midwife Connect Rwanda</title>
 
@@ -578,45 +577,231 @@
 
 
 <script>
-const registerForm = document.getElementById("registerForm");
-const message = document.getElementById("message");
 
-function showError(text) { message.textContent = text; message.className = "message error"; }
-function showSuccess(text) { message.textContent = text; message.className = "message success"; }
+    // ==========================================
+    // MIDWIFE CONNECT RWANDA
+    // SUPABASE CONFIGURATION
+    // ==========================================
 
-registerForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim().toLowerCase();
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
-  const roleEl = document.getElementById("userType");
-  const userType = roleEl ? roleEl.value : "student";
+    const SUPABASE_URL =
+        "https://bacglcfakibamdhvuwt.supabase.co";
 
-  if (!name) return showError("Please enter your full name.");
-  if (!/^\S+@\S+\.\S+$/.test(email)) return showError("Please enter a valid email address.");
-  if (password.length < 8) return showError("Password must contain at least 8 characters.");
-  if (password !== confirmPassword) return showError("Passwords do not match.");
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_enFS4mLUJMGpF4cM6TMsfA_pcnq2mYG";
 
-  const button = registerForm.querySelector("button[type='submit']");
-  if (button) { button.disabled = true; button.textContent = "Creating account..."; }
 
-  const redirectTo = location.href.replace(/register\.html(?:\?.*)?$/, "login.html");
-  const { error } = await mcrSupabase.auth.signUp({
-    email, password,
-    options: { data: { name, userType }, emailRedirectTo: redirectTo }
-  });
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
 
-  if (error) {
-    showError(error.message);
-    if (button) { button.disabled = false; button.textContent = "Create Account"; }
-    return;
-  }
 
-  showSuccess("Account created. Check your email to verify your account, then log in.");
-  registerForm.reset();
-  if (button) { button.disabled = false; button.textContent = "Create Account"; }
-});
+    // ==========================================
+    // FORM
+    // ==========================================
+
+    const registerForm =
+        document.getElementById("registerForm");
+
+    const message =
+        document.getElementById("message");
+
+
+    // ==========================================
+    // REGISTRATION
+    // ==========================================
+
+    registerForm.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+
+            // ----------------------------------
+            // VALIDATION
+            // ----------------------------------
+
+            if (!name) {
+
+                showError(
+                    "Please enter your full name."
+                );
+
+                return;
+            }
+
+
+            if (!email) {
+
+                showError(
+                    "Please enter your email address."
+                );
+
+                return;
+            }
+
+
+            if (password.length < 6) {
+
+                showError(
+                    "Password must contain at least 6 characters."
+                );
+
+                return;
+            }
+
+
+            if (password !== confirmPassword) {
+
+                showError(
+                    "Passwords do not match."
+                );
+
+                return;
+            }
+
+
+            // ----------------------------------
+            // DISABLE BUTTON
+            // ----------------------------------
+
+            const button =
+                registerForm.querySelector(
+                    "button[type='submit']"
+                );
+
+            button.disabled = true;
+
+            button.textContent =
+                "Creating account...";
+
+
+            // ----------------------------------
+            // GET USER TYPE
+            // ----------------------------------
+
+            const userTypeElement =
+                document.getElementById("userType");
+
+            const userType =
+                userTypeElement
+                    ? userTypeElement.value
+                    : "student";
+
+
+            // ----------------------------------
+            // CREATE SUPABASE ACCOUNT
+            // ----------------------------------
+
+            const { data, error } =
+                await supabaseClient.auth.signUp({
+
+                    email: email,
+
+                    password: password,
+
+                    options: {
+
+                        data: {
+
+                            name: name,
+
+                            userType: userType
+
+                        },
+
+                        emailRedirectTo:
+                            "https://felixkwizeralee-sketch.github.io/Midwife-Connect-Rwanda/pages/login.html"
+
+                    }
+
+                });
+
+
+            // ----------------------------------
+            // ERROR
+            // ----------------------------------
+
+            if (error) {
+
+                console.error(error);
+
+                showError(
+                    error.message
+                );
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Create Account";
+
+                return;
+            }
+
+
+            // ----------------------------------
+            // SUCCESS
+            // ----------------------------------
+
+            showSuccess(
+                "Account created successfully! Please check your email and click the verification link before logging in."
+            );
+
+
+            registerForm.reset();
+
+
+            button.disabled = false;
+
+            button.textContent =
+                "Create Account";
+
+        }
+    );
+
+
+    // ==========================================
+    // ERROR MESSAGE
+    // ==========================================
+
+    function showError(text) {
+
+        message.textContent = text;
+
+        message.className =
+            "message error";
+
+    }
+
+
+    // ==========================================
+    // SUCCESS MESSAGE
+    // ==========================================
+
+    function showSuccess(text) {
+
+        message.textContent = text;
+
+        message.className =
+            "message success";
+
+    }
+
 </script>
 
 

@@ -8,10 +8,6 @@
     <title>My Dashboard | Midwife Connect Rwanda</title>
 
     <link rel="stylesheet" href="../css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/supabase.js"></script>
-<script src="../js/auth-guard.js"></script>
-<script src="../js/progress.js"></script>
 
     <style>
 
@@ -623,7 +619,7 @@
             <div>
 
                 <h1>
-                    <span data-user-name>Welcome</span>, <span id="userName">User</span> 👋
+                    Welcome, <span id="userName">User</span> 👋
                 </h1>
 
                 <p>
@@ -730,7 +726,7 @@
                 </p>
 
                 <a
-                    href="student.html"
+                    href="students.html"
                     class="card-button"
                 >
                     View Lessons
@@ -845,7 +841,7 @@
                 </p>
 
                 <a
-                    href="midwife.html"
+                    href="midwives.html"
                     class="card-button"
                 >
                     Resources
@@ -958,7 +954,7 @@
 
 
             <a
-                href="student.html"
+                href="students.html"
                 class="quick-link"
             >
                 🎓 Student Area
@@ -992,13 +988,7 @@
         </section>
 
 
-    <section style="margin:30px 0;display:flex;flex-wrap:wrap;gap:12px">
-<a href="quiz.html" style="padding:13px 18px;background:#8b4f82;color:#fff;border-radius:10px;text-decoration:none;font-weight:700">📝 Take a Quiz</a>
-<a href="certificate.html" style="padding:13px 18px;background:#f0f5f3;color:#29423d;border-radius:10px;text-decoration:none;font-weight:700">🏆 Certificate</a>
-</section><section id="mcr-cloud-progress" style="max-width:900px;margin:25px auto;padding:22px;background:#fff;border:1px solid #e1ebe8;border-radius:16px">
-<h2>📊 Learning Progress</h2><p id="mcrProgressText">Syncing your progress...</p>
-<div style="height:12px;background:#e8efed;border-radius:12px;overflow:hidden"><div id="mcrProgressBar" style="height:100%;width:0;background:#8b4f82"></div></div>
-</section></main>
+    </main>
 
 </div>
 
@@ -1202,19 +1192,6 @@
 </script>
 
 
-<script>
-(async function(){
- const total=16;
- if(window.MCRProgress){
-   await MCRProgress.refresh();
-   const pct=MCRProgress.percent(total);
-   const text=document.getElementById("mcrProgressText");
-   const bar=document.getElementById("mcrProgressBar");
-   if(text) text.textContent=pct+"% of the Anatomy & Physiology learning path completed";
-   if(bar) bar.style.width=pct+"%";
- }
-})();
-</script>
 </body>
 
 </html>

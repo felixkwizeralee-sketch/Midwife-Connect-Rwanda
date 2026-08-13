@@ -409,8 +409,6 @@
 
     </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/supabase.js"></script>
 </head>
 
 
@@ -642,49 +640,180 @@
 
 
 <script>
-const loginForm = document.getElementById("loginForm");
-const message = document.getElementById("message");
 
-function togglePassword() {
-  const password = document.getElementById("password");
-  const button = document.querySelector(".show-password");
-  if (!password) return;
-  password.type = password.type === "password" ? "text" : "password";
-  if (button) button.textContent = password.type === "password" ? "👁️" : "🙈";
-}
-function showError(text) { message.textContent = text; message.className = "message error"; }
-function showSuccess(text) { message.textContent = text; message.className = "message success"; }
+    const loginForm =
+        document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  if (!email || !password) return showError("Please enter your email and password.");
+    const message =
+        document.getElementById("message");
 
-  const button = loginForm.querySelector('button[type="submit"]');
-  if (button) { button.disabled = true; button.textContent = "Signing in..."; }
 
-  const { data, error } = await mcrSupabase.auth.signInWithPassword({ email, password });
-  if (error) {
-    showError(error.message);
-    if (button) { button.disabled = false; button.textContent = "Login"; }
-    return;
-  }
+    /* SHOW / HIDE PASSWORD */
 
-  const redirect = new URLSearchParams(location.search).get("redirect");
-  showSuccess("Login successful! Redirecting...");
-  setTimeout(() => location.replace(redirect || "dashboard.html"), 400);
-});
+    function togglePassword() {
 
-async function forgotPassword(event) {
-  event.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  if (!email) return showError("Enter your email first.");
-  const redirectTo = location.href.replace(/login\.html(?:\?.*)?$/, "reset-password.html");
-  const { error } = await mcrSupabase.auth.resetPasswordForEmail(email, { redirectTo });
-  if (error) showError(error.message);
-  else showSuccess("Password reset instructions have been sent to your email.");
-}
+        const password =
+            document.getElementById("password");
+
+        const button =
+            document.querySelector(".show-password");
+
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            button.textContent = "🙈";
+
+        } else {
+
+            password.type = "password";
+
+            button.textContent = "👁️";
+
+        }
+
+    }
+
+
+    /* LOGIN */
+
+    loginForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document.getElementById("email")
+                .value
+                .trim();
+
+
+            const password =
+                document.getElementById("password")
+                .value;
+
+
+            if (!email || !password) {
+
+                showError(
+                    "Please enter your email and password."
+                );
+
+                return;
+            }
+
+
+            /*
+             * TEMPORARY DEMO LOGIN
+             *
+             * This does not authenticate
+             * a real online account.
+             */
+
+
+            const savedUser =
+                localStorage.getItem(
+                    "midwifeConnectDemoUser"
+                );
+
+
+            if (!savedUser) {
+
+                showError(
+                    "No demo registration was found. Please create an account first."
+                );
+
+                return;
+            }
+
+
+            const user =
+                JSON.parse(savedUser);
+
+
+            if (
+                email.toLowerCase() !==
+                user.email.toLowerCase()
+            ) {
+
+                showError(
+                    "The email address does not match the registered account."
+                );
+
+                return;
+            }
+
+
+            /*
+             * TEMPORARY SUCCESS
+             */
+
+            localStorage.setItem(
+                "midwifeConnectLoggedIn",
+                "true"
+            );
+
+
+            localStorage.setItem(
+                "midwifeConnectUser",
+                JSON.stringify(user)
+            );
+
+
+            showSuccess(
+    "Login successful! Redirecting to your dashboard..."
+);
+
+setTimeout(function () {
+
+    window.location.href = "dashboard.html";
+
+}, 800);
+
+
+        }
+    );
+
+
+    /* ERROR */
+
+    function showError(text) {
+
+        message.textContent = text;
+
+        message.className =
+            "message error";
+
+    }
+
+
+    /* SUCCESS */
+
+    function showSuccess(text) {
+
+        message.textContent = text;
+
+        message.className =
+            "message success";
+
+    }
+
+
+    /* FORGOT PASSWORD */
+
+    function forgotPassword(event) {
+
+        event.preventDefault();
+
+        showError(
+            "Password recovery will be connected when we add real authentication."
+        );
+
+    }
+
 </script>
 
 
